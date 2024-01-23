@@ -4,8 +4,12 @@
     <div class="row">
       <nav class="col-md-2 d-none d-md-block sidebar">
         <div class="sidebar-logo">
-          <img src="<?= BASEURL ?>/assets/img/logo-sipemla.png" alt="Logo SIPEMLA" />
-          <h5>SIPEMLA</h5>
+          <a href="http://localhost/SIPEMLA/Beranda">
+            <img src="<?= BASEURL ?>/assets/img/logo-sipemla.png" alt="Logo SIPEMLA" />
+          </a>
+          <h5 class="link-sipemla">
+            SIPEMLA
+          </h5>
         </div>
         <ul class="sidebar-menu">
           <li>
