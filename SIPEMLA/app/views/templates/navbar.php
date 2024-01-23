@@ -21,10 +21,10 @@
               <a class="nav-link" href="http://localhost/SIPEMLA/Beranda">Beranda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Data Mahasiswa</a>
+                <a class="nav-link" href="http://localhost/SIPEMLA/Datamahasiswa">Data Mahasiswa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pembayaran</a>
+                <a class="nav-link" href="http://localhost/SIPEMLA/Pembayaran">Pembayaran</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Login</a>

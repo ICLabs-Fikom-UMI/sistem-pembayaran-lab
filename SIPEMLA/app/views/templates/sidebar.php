@@ -16,16 +16,16 @@
             <a href="http://localhost/SIPEMLA/Beranda"><img src="<?= BASEURL ?>/assets/img/Beranda-icon.png" alt="Icon 1" />Beranda</a>
           </li>
           <li>
-            <a href="#"><img src="<?= BASEURL ?>/assets/img/user-icon.png" alt="Icon 2" />User Management</a>
+            <a href="http://localhost/SIPEMLA/Usermanagement"><img src="<?= BASEURL ?>/assets/img/user-icon.png" alt="Icon 2" />User Management</a>
           </li>
           <li>
-            <a href="#"><img src="<?= BASEURL ?>/assets/img/mahasiswa-icon.png" alt="Icon 3" />Data Mahasiswa</a>
+            <a href="http://localhost/SIPEMLA/Datamahasiswa"><img src="<?= BASEURL ?>/assets/img/mahasiswa-icon.png" alt="Icon 3" />Data Mahasiswa</a>
           </li>
           <li>
-            <a href="#"><img src="<?= BASEURL ?>/assets/img/matkul-icon.png" alt="Icon 4" />Mata Kuliah</a>
+            <a href="http://localhost/SIPEMLA/Matakuliah"><img src="<?= BASEURL ?>/assets/img/matkul-icon.png" alt="Icon 4" />Mata Kuliah</a>
           </li>
           <li>
-            <a href="#"><img src="<?= BASEURL ?>/assets/img/pembayaran-icon.png" alt="Icon 5" />Pembayaran</a>
+            <a href="http://localhost/SIPEMLA/Pembayaran"><img src="<?= BASEURL ?>/assets/img/pembayaran-icon.png" alt="Icon 5" />Pembayaran</a>
           </li>
         </ul>
       </nav>
