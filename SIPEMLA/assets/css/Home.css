@@ -1,0 +1,40 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("../img/bg-home2.JPG") center/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(
+    10,
+    9,
+    9,
+    0.8
+  ); /* Nilai transparansi diatur melalui alpha (0-1) */
+}
+
+.col .fikom-icon {
+  width: 90%;
+  height: auto;
+}
+
+.col .cek-pembayaran {
+  background-color: #51a8b1;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  border-radius: 20px;
+}
+
+.col .cek-pembayaran .card-body .form-cek-pembayaran {
+  height: 170px;
+  width: auto;
+  border-radius: 20px;
+}
+
+.card-body .form-cek-pembayaran .btn-cek {
+  background-color: #51a8b1;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
