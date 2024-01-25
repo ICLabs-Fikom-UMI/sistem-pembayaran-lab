@@ -2,7 +2,7 @@
 ini_set('display_errors', 'On');
 error_reporting(error_reporting() & ~E_NOTICE);
 
-// session_start();
+if (!session_id()) session_start();
 
 // $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 // $url = explode("/", $url);
@@ -17,7 +17,7 @@ error_reporting(error_reporting() & ~E_NOTICE);
 //         $nama = $_SESSION['nama'];
 
 
-        require_once 'app/init.php';
+require_once 'app/init.php';
 
-        $app = new App;
+$app = new App;
     // }

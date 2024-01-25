@@ -1,13 +1,18 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/usermanagement.css">
 <div class="container-usermanagement1">
     <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="http://localhost/SIPEMLA/" role="button">Logout</a>
+        <a class="btn-logout btn-sm" href="http://localhost/SIPEMLA/" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
     </div>
     <div class="mt-5 ms-3 mb-5">
         <h5>User Management</h5>
     </div>
-    <div class="container-btn-add ">
-        <button class="btn-add" type="submit"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
+    <div class="row">
+        <div class="col-lg-6">
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+    <div class="container-btn-add">
+        <button class="btn-add add-user" type="button" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
     </div>
     <div>
         <div class="container-user rounded mt-">
@@ -22,19 +27,66 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>SampleUser</td>
-                        <td>SamplePassword</td>
-                        <td>Admin</td>
-                        <td>
-                            <button class="btn-edit"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></button>
-                            <button class="btn-delete"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></button>
-                        </td>
-                    </tr>
+
+                    <?php
+                    $no = 0;
+                    foreach ($data['user'] as $user) :
+                        $no++;
+                    ?>
+
+                        <tr>
+                            <td><?= $no; ?></td>
+                            <td><?= $user['username']; ?></td>
+                            <td><?= $user['password']; ?></td>
+                            <td><?= $user['role']; ?></td>
+                            <td class="p-3">
+                                <a class="btn-edit edit-user" role="button" href="<?= BASEURL; ?>/Usermanagement/edit/<?= $user['iduser'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $user['iduser']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Usermanagement/hapus/<?= $user['iduser'] ?>" onclick="return confirm('Anda yakin Ingin Hapus?')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
         </div>
     </div>
 
+</div>
+
+<!-- Modal-->
+<div class="modal fade" id="formUser" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="judulModalLabel">Tambah User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= BASEURL; ?>/Usermanagement/tambah" method="post">
+                    <input type="hidden" class="id" name="iduser" id="id">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control input-username" id="input-username" name="username" placeholder="Masukkan Username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control input-password" id="input-password" name="password" placeholder="Masukkan Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-select option-role" aria-label="Default select example" name="role" id="option-role">
+                            <option selected>Pilih Role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Kepala Lab">Kepala Lab</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="modal-footer modal-user">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Add User</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
