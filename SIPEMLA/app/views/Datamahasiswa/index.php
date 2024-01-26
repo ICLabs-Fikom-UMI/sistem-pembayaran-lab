@@ -17,22 +17,30 @@
                         <th>No</th>
                         <th>Stambuk</th>
                         <th>Nama</th>
-                        <th>Keterangan</th>
+                        <th>Kelas</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>SampleUser</td>
-                        <td>SamplePassword</td>
-                        <td>Admin</td>
-                        <td>
-                            <button class="btn-edit"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></button>
-                            <button class="btn-delete"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></button>
-                            <button class="btn-detail">Detail</button>
-                        </td>
-                    </tr>
+                    <?php
+                    $no = 0;
+                    foreach ($data['mahasiswa'] as $mhs) :
+                        $no++;
+                    ?>
+                        <tr>
+                            <td><?= $no; ?></td>
+                            <td><?= $mhs['stambuk']; ?></td>
+                            <td><?= $mhs['nama']; ?></td>
+                            <td><?= $mhs['namekelas']; ?></td>
+                            <td>
+                                <button class="btn-edit"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></button>
+                                <button class="btn-delete"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></button>
+                                <button class="btn-detail">Detail</button>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
         </div>
