@@ -25,8 +25,6 @@ class Mahasiswa_model
 
     public function tampil()
     {
-        // $this->db->query("SELECT * FROM mahasiswa ORDER BY stambuk ASC;");
-        // return $this->db->resultSet();
         $this->db->query("SELECT stambuk, nama, prodi, kelas.namekelas FROM mahasiswa JOIN kelas ON mahasiswa.idkelas = kelas.idkelas;");
         return $this->db->resultSet();
     }
@@ -44,8 +42,8 @@ class Mahasiswa_model
 
     public function tampilById($id)
     {
-        $this->db->query("SELECT * FROM matakuliah WHERE kodematakuliah= :kodematakuliah");
-        $this->db->bind('kodematakuliah', $id);
+        $this->db->query("SELECT stambuk, nama, prodi, kelas.namekelas FROM mahasiswa JOIN kelas ON mahasiswa.idkelas = kelas.idkelas WHERE stambuk = :stambuk;");
+        $this->db->bind('stambuk', $id);
         return $this->db->single();
     }
 

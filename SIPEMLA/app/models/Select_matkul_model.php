@@ -1,6 +1,6 @@
 <?php
 
-class Matkul_model
+class Select_matkul_model
 {
     private $db;
 
@@ -23,12 +23,6 @@ class Matkul_model
         return $this->db->rowCount();
     }
 
-    public function tampil()
-    {
-        $this->db->query("SELECT * FROM matakuliah ORDER BY kodematakuliah ASC;");
-        return $this->db->resultSet();
-    }
-
     public function hapus($id)
     {
         $query = "DELETE FROM matakuliah WHERE kodematakuliah = :kodematakuliah";
@@ -42,9 +36,16 @@ class Matkul_model
 
     public function tampilById($id)
     {
-        $this->db->query("SELECT * FROM matakuliah WHERE kodematakuliah= :kodematakuliah");
-        $this->db->bind('kodematakuliah', $id);
+        // $this->db->query("SELECT * FROM matakuliah WHERE kodematakuliah= :kodematakuliah");
+        $this->db->query("SELECT id, stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah WHERE stambuk = :stambuk;");
+        $this->db->bind('stambuk', $id);
         return $this->db->single();
+    }
+
+    public function tampil()
+    {
+        $this->db->query("SELECT id, stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah;");
+        return $this->db->resultSet();
     }
 
     public function edit($data)

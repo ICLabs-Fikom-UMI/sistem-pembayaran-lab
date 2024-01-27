@@ -18,6 +18,7 @@
                         <th>Stambuk</th>
                         <th>Nama</th>
                         <th>Kelas</th>
+                        <!-- <th><?=$data['mahasiswa']['namekelas'];?></th> -->
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -33,9 +34,9 @@
                             <td><?= $mhs['nama']; ?></td>
                             <td><?= $mhs['namekelas']; ?></td>
                             <td>
-                                <button class="btn-edit"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></button>
-                                <button class="btn-delete"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></button>
-                                <button class="btn-detail">Detail</button>
+                                <a class="btn-edit" role="button" href="<?= BASEURL; ?>/Datamahasiswa/edit/<?= $mhs['stambuk'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $mhs['stambuk']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                <a class="btn-delete"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                <a style="text-decoration: none;" class="btn-detail detail-mahasiswa" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>">Detail</a>
                             </td>
                         </tr>
 
@@ -46,4 +47,37 @@
         </div>
     </div>
 
+</div>
+
+<!-- Modal Edit Tambah-->
+<div class="modal fade" id="formDetail" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="judulModalLabel">Detail Data Mahasiswa</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= BASEURL; ?>/Matakuliah/tambah" method="post">
+                    <input type="hidden" class="id" name="old_kodematakuliah" id="hidden-kodematkul">
+                    <div class="mb-3">
+                        <label for="kode-mata-kuliah" class="form-label">Kode Mata Kuliah</label>
+                        <input type="text" class="form-control input-kodematkul" id="input-kodematkul" name="kodematakuliah" placeholder="Masukkan Kode Mata Kuliah">
+                    </div>
+                    <div class="mb-3">
+                        <label for="M" class="form-label">Nama Mata Kuliah</label>
+                        <input type="text" class="form-control input-matkul" id="input-matkul" name="namamatakuliah" placeholder="Masukkan Nama Mata Kuliah">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sks" class="form-label">SKS</label>
+                        <input type="number" class="form-control input-sks" id="input-sks" name="sks" placeholder="Masukkan SKS">
+                    </div>
+            </div>
+            <div class="modal-footer modal-matkul">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Add Data</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

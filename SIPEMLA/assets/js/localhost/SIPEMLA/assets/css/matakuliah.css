@@ -18,13 +18,13 @@ body {
   padding: 8px;
 }
 
-/* .container-btn-add {
-  text-align: right;
-  margin-bottom: 10px;
-} */
+.container-btn-add {
+  text-align: right; /* Tombol login berada di ujung kanan */
+  margin-bottom: 10px; /* Memberikan margin di bawah container-btn */
+}
 .container-btn-add .btn-add {
   width: 80px;
-  height: 43px;
+  height: auto;
   background-color: #1ac87e;
   font-family: "Poppins", sans-serif;
   font-size: 16px;

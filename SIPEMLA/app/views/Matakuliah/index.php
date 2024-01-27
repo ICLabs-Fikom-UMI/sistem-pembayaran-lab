@@ -3,7 +3,7 @@
     <div class="container-btn mt-3 ">
         <a class="btn-logout btn-sm" href="http://localhost/SIPEMLA/" role="button" onclick="return confirm('Anda Yakin Ingin Keluar?')">Logout</a>
     </div>
-    <div class="mt-5 ms-3 mb-5">
+    <div class="mt-3 ms-3 mb-2">
         <h5>Mata Kuliah</h5>
     </div>
     <div class="row">
@@ -11,12 +11,22 @@
             <?php Flasher::flash(); ?>
         </div>
     </div>
-    <div class="container-btn-add ">
-        <button class="btn-add add-matkul" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
-    </div>
     <div>
-        <div class="container-user rounded mt-">
-            <table id="example" class="table table-bordered table-striped" style="width:100%">
+        <div class="container-user">
+            <table id="table-matakuliah" class="table table-bordered table-striped mx-auto" style="width:80%;">
+                <thead class="no-border" style="border-top-color:white; border-left-color:white; border-right-color:white;">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th class="container-btn-add">
+                            <!-- <div class="container-btn-add"> -->
+                                <button class="btn-add add-matkul mb-3" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
+                            <!-- </div> -->
+                        </th>
+                    </tr>
+                </thead>
                 <thead>
                     <tr>
                         <th>No</th>
@@ -27,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     <?php
                     $no = 0;
                     foreach ($data['matkul'] as $matkul) :
@@ -40,7 +50,7 @@
                             <td><?= $matkul['namamatakuliah']; ?></td>
                             <td><?= $matkul['sks']; ?></td>
                             <td>
-                                <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matkul/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
                                 <a class="btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
                             </td>
                         </tr>
