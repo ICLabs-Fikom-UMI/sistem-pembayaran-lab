@@ -5,8 +5,6 @@ class Datamahasiswa extends Controller {
     {
         $data['title'] = 'Data Mahasiswa';
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampil();
-        $data['matkul'] = $this->model('Select_matkul_model')->tampil();
-        var_dump($data['matkul']);
 
         $this->view('templates/header', $data);
         $this->view('templates/sidebar');
@@ -21,7 +19,6 @@ class Datamahasiswa extends Controller {
         $data['title'] = 'Tambah Data Mahasiswa';
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampilById($id);
         $data['matkul_select'] = $this->model('Select_matkul_model')->tampilById($id);
-        var_dump($data['matkul_select']);
         
         $this->view('templates/header', $data);
         $this->view('templates/sidebar');

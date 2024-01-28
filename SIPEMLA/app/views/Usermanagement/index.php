@@ -3,7 +3,7 @@
     <div class="container-btn mt-3 ">
         <a class="btn-logout btn-sm" href="http://localhost/SIPEMLA/" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
     </div>
-    <div class="mt-5 ms-3 mb-5">
+    <div class="mt-5 ms-3 mb-2">
         <h5>User Management</h5>
     </div>
     <div class="row">
@@ -11,11 +11,11 @@
             <?php Flasher::flash(); ?>
         </div>
     </div>
-    <div class="container-btn-add">
-        <button class="btn-add add-user" type="button" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
-    </div>
     <div>
-        <div class="container-user rounded mt-">
+        <div class="container-user rounded col-8 mx-auto">
+            <div class="container-btn-add mb-3">
+                <button class="btn-add add-user" type="button" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
+            </div>
             <table id="example" class="table table-bordered table-striped" style="width:100%">
                 <thead>
                     <tr>

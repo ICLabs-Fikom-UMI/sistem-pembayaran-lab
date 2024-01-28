@@ -12,53 +12,45 @@
         </div>
     </div>
     <div>
-        <div class="container-user">
-            <table id="table-matakuliah" class="table table-bordered table-striped mx-auto" style="width:80%;">
-                <thead class="no-border" style="border-top-color:white; border-left-color:white; border-right-color:white;">
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th class="container-btn-add">
-                            <!-- <div class="container-btn-add"> -->
-                                <button class="btn-add add-matkul mb-3" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
-                            <!-- </div> -->
-                        </th>
-                    </tr>
-                </thead>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Kode Mata Kuliah</th>
-                        <th>Nama Mata Kuliah</th>
-                        <th>SKS</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
-                    $no = 0;
-                    foreach ($data['matkul'] as $matkul) :
-                        $no++;
-                    ?>
-
+        <div class="container-user col-11 mx-auto">
+            <div class="container-btn-add">
+                <button class="btn-add add-matkul mb-3" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
+            </div>
+            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll;">
+                <table id="myTable" class="table table-bordered table-striped " style="width:100%;">
+                    <thead>
                         <tr>
-                            <td><?= $no; ?></td>
-                            <td><?= $matkul['kodematakuliah']; ?></td>
-                            <td><?= $matkul['namamatakuliah']; ?></td>
-                            <td><?= $matkul['sks']; ?></td>
-                            <td>
-                                <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                <a class="btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                            </td>
+                            <th>No</th>
+                            <th>Kode Mata Kuliah</th>
+                            <th>Nama Mata Kuliah</th>
+                            <th>SKS</th>
+                            <th>Action</th>
                         </tr>
-
-                    <?php endforeach; ?>
-
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+    
+                        <?php
+                        $no = 0;
+                        foreach ($data['matkul'] as $matkul) :
+                            $no++;
+                        ?>
+    
+                            <tr>
+                                <td><?= $no; ?></td>
+                                <td><?= $matkul['kodematakuliah']; ?></td>
+                                <td><?= $matkul['namamatakuliah']; ?></td>
+                                <td><?= $matkul['sks']; ?></td>
+                                <td>
+                                    <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                    <a class="btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                </td>
+                            </tr>
+    
+                        <?php endforeach; ?>
+    
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

@@ -36,15 +36,14 @@ class Select_matkul_model
 
     public function tampilById($id)
     {
-        // $this->db->query("SELECT * FROM matakuliah WHERE kodematakuliah= :kodematakuliah");
-        $this->db->query("SELECT id, stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah WHERE stambuk = :stambuk;");
+        $this->db->query("SELECT matkul_select.id, matkul_select.stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select LEFT JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah WHERE matkul_select.stambuk = :stambuk;");
         $this->db->bind('stambuk', $id);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
 
     public function tampil()
     {
-        $this->db->query("SELECT id, stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah;");
+        $this->db->query("SELECT matkul_select.id, matkul_select.stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah;");
         return $this->db->resultSet();
     }
 

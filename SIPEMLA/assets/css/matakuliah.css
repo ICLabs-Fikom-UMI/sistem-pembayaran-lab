@@ -18,10 +18,10 @@ body {
   padding: 8px;
 }
 
-/* .container-btn-add {
+.container-user .container-btn-add {
   text-align: right;
   margin-bottom: 10px;
-} */
+}
 .container-btn-add .btn-add {
   width: 80px;
   height: 43px;
