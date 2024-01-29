@@ -12,43 +12,45 @@
         </div>
     </div>
     <div>
-        <div class="container-user rounded col-8 mx-auto">
+        <div class="container-user rounded col-10 mx-auto">
             <div class="container-btn-add mb-3">
                 <button class="btn-add add-user" type="button" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <table id="example" class="table table-bordered table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Role</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
-                    $no = 0;
-                    foreach ($data['user'] as $user) :
-                        $no++;
-                    ?>
-
+            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll;">
+                <table id="myTable" class="table table-bordered table-striped" style="width:100%">
+                    <thead>
                         <tr>
-                            <td><?= $no; ?></td>
-                            <td><?= $user['username']; ?></td>
-                            <td><?= $user['password']; ?></td>
-                            <td><?= $user['role']; ?></td>
-                            <td class="p-3">
-                                <a class="btn-edit edit-user" role="button" href="<?= BASEURL; ?>/Usermanagement/edit/<?= $user['iduser'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $user['iduser']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Usermanagement/hapus/<?= $user['iduser'] ?>" onclick="return confirm('Anda yakin Ingin Hapus?')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                            </td>
+                            <th>No</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Role</th>
+                            <th>Action</th>
                         </tr>
+                    </thead>
+                    <tbody>
 
-                    <?php endforeach; ?>
+                        <?php
+                        $no = 0;
+                        foreach ($data['user'] as $user) :
+                            $no++;
+                        ?>
 
-                </tbody>
-            </table>
+                            <tr>
+                                <td><?= $no; ?></td>
+                                <td><?= $user['username']; ?></td>
+                                <td><?= $user['password']; ?></td>
+                                <td><?= $user['role']; ?></td>
+                                <td class="p-3">
+                                    <a class="btn-edit edit-user" role="button" href="<?= BASEURL; ?>/Usermanagement/edit/<?= $user['iduser'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $user['iduser']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                    <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Usermanagement/hapus/<?= $user['iduser'] ?>" onclick="return confirm('Anda yakin Ingin Hapus?')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                </td>
+                            </tr>
+
+                        <?php endforeach; ?>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

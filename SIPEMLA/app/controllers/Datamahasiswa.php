@@ -5,6 +5,8 @@ class Datamahasiswa extends Controller {
     {
         $data['title'] = 'Data Mahasiswa';
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampil();
+        $data['matkul'] = $this->model('Matkul_model')->tampil();
+        $data['kelas'] = $this->model('Kelas_model')->tampil();
 
         $this->view('templates/header', $data);
         $this->view('templates/sidebar');
@@ -16,7 +18,7 @@ class Datamahasiswa extends Controller {
     
     public function detail($id)
     {
-        $data['title'] = 'Tambah Data Mahasiswa';
+        $data['title'] = 'Detail Data Mahasiswa';
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampilById($id);
         $data['matkul_select'] = $this->model('Select_matkul_model')->tampilById($id);
         
@@ -26,4 +28,20 @@ class Datamahasiswa extends Controller {
         $this->view('templates/footersidebar');
         $this->view('templates/footer');
     }
+
+    public function tambah()
+    {
+        
+        if ($this->model('Mahasiswa_model')->tambah($_POST) > 0) {
+            $this->model('Select_matkul_model')->tambah($_POST);
+            Flasher::setFlash('Berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/Datamahasiswa');
+            exit;
+        } else {
+            Flasher::setFlash('Gagal', 'ditambahkan', 'danger');
+            header('Location: ' . BASEURL . '/Datamahasiswa');
+            exit;
+        }
+    }
+
 }

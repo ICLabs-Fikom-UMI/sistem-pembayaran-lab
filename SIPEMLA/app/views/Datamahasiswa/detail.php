@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div style="max-height: 80vh; overflow-x: hidden; overflow-y: scroll;" class="">
+    <div style="max-height: 80vh; overflow-x: hidden; overflow-y: scroll;">
         <div class="container-user rounded mt">
             <div class="row justify-content-center">
 

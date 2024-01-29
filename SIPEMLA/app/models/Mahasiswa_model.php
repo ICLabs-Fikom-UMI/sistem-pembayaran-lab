@@ -11,12 +11,13 @@ class Mahasiswa_model
 
     public function tambah($data)
     {
-        $query = "INSERT INTO matakuliah VALUES(:kodematakuliah, :namamatakuliah, :sks)";
+        $query = "INSERT INTO mahasiswa VALUES(:stambuk, :nama, :prodi, :idkelas)";
 
         $this->db->query($query);
-        $this->db->bind('kodematakuliah', $data['kodematakuliah']);
-        $this->db->bind('namamatakuliah', $data['namamatakuliah']);
-        $this->db->bind('sks', $data['sks']);
+        $this->db->bind('stambuk', $data['stambuk']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('prodi', $data['prodi']);
+        $this->db->bind('idkelas', $data['idkelas']);
 
         $this->db->execute();
 

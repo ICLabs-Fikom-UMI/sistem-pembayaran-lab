@@ -1,6 +1,6 @@
 <?php
 
-class Select_matkul_model
+class Kelas_model
 {
     private $db;
 
@@ -11,14 +11,14 @@ class Select_matkul_model
 
     public function tambah($data)
     {
-        foreach ($data['kodematakuliah'] as $km) {
-            $query = "INSERT INTO matkul_select VALUES('', :stambuk, :kodematakuliah)";
-            $this->db->query($query);
-            $this->db->bind('stambuk', $data['stambuk']);
-            $this->db->bind('kodematakuliah', $km);
-    
-            $this->db->execute();
-        }
+        $query = "INSERT INTO matakuliah VALUES(:kodematakuliah, :namamatakuliah, :sks)";
+
+        $this->db->query($query);
+        $this->db->bind('kodematakuliah', $data['kodematakuliah']);
+        $this->db->bind('namamatakuliah', $data['namamatakuliah']);
+        $this->db->bind('sks', $data['sks']);
+
+        $this->db->execute();
 
         return $this->db->rowCount();
     }
@@ -43,7 +43,7 @@ class Select_matkul_model
 
     public function tampil()
     {
-        $this->db->query("SELECT matkul_select.id, matkul_select.stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah;");
+        $this->db->query("SELECT * FROM kelas ORDER BY idkelas ASC;");
         return $this->db->resultSet();
     }
 
