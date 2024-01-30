@@ -12,7 +12,7 @@
         </div>
     </div>
     <div>
-        <div class="container-user rounded col-9 mx-auto">
+        <div class="container-user rounded col-11 mx-auto">
             <div class="container-btn-add mb-3">
                 <button class="btn-add" type="submit" data-bs-toggle="modal" data-bs-target="#formMahasiswa"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
@@ -39,8 +39,8 @@
                                 <td><?= $mhs['nama']; ?></td>
                                 <td><?= $mhs['namekelas']; ?></td>
                                 <td>
-                                    <a class="btn-edit" role="button" href="<?= BASEURL; ?>/Datamahasiswa/edit/<?= $mhs['stambuk'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $mhs['stambuk']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                    <a class="btn-delete"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                    <a class="btn-edit" role="button" href="<?= BASEURL; ?>/Datamahasiswa/editTampil/<?= $mhs['stambuk'] ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                    <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Datamahasiswa/hapus/<?= $mhs['stambuk'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
                                     <a style="text-decoration: none;" class="btn-detail detail-mahasiswa" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>">Detail</a>
                                 </td>
                             </tr>
@@ -65,7 +65,6 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/Datamahasiswa/tambah" method="post">
-                    <input type="hidden" class="id" name="old_kodematakuliah" id="hidden-kodematkul">
                     <div class="mb-3">
                         <label for="kode-stambuk" class="form-label">Stambuk</label>
                         <input type="text" class="form-control input-stambuk" id="input-stambuk" name="stambuk" placeholder="Masukkan Stambuk">
@@ -94,7 +93,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="sks" class="form-label">Prodi</label>
+                        <label for="sks" class="form-label">Mata Kuliah</label>
                         <?php
                         foreach ($data['matkul'] as $matkul) :
                         ?>

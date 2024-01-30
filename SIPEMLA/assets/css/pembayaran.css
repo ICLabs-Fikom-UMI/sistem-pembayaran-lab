@@ -3,6 +3,18 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
 .container-btn {
   text-align: right; /* Tombol login berada di ujung kanan */
   margin-bottom: 10px; /* Memberikan margin di bawah container-btn */

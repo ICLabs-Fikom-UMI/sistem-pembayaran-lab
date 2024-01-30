@@ -25,9 +25,9 @@ class Select_matkul_model
 
     public function hapus($id)
     {
-        $query = "DELETE FROM matakuliah WHERE kodematakuliah = :kodematakuliah";
+        $query = "DELETE FROM matkul_select WHERE stambuk = :stambuk";
         $this->db->query($query);
-        $this->db->bind('kodematakuliah', $id);
+        $this->db->bind('stambuk', $id);
 
         $this->db->execute();
 
@@ -36,7 +36,7 @@ class Select_matkul_model
 
     public function tampilById($id)
     {
-        $this->db->query("SELECT matkul_select.id, matkul_select.stambuk, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select LEFT JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah WHERE matkul_select.stambuk = :stambuk;");
+        $this->db->query("SELECT matkul_select.id, matkul_select.stambuk, matkul_select.kodematakuliah, matakuliah.namamatakuliah, matakuliah.sks FROM matkul_select LEFT JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah WHERE matkul_select.stambuk = :stambuk;");
         $this->db->bind('stambuk', $id);
         return $this->db->resultSet();
     }

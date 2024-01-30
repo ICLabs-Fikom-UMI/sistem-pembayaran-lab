@@ -7,7 +7,7 @@ class Home extends Controller {
 
         $this->view('templates/header', $data);
         $this->view('templates/navbar');
-        $this->view('Home/index');
+        $this->view('Home/index', $data);
         $this->view('templates/footer');
     }
 }

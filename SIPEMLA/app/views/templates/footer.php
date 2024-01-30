@@ -6,7 +6,7 @@
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 <script src="<?= BASEURL; ?>/assets/js/usermanagement.js"></script>
 <script src="<?= BASEURL; ?>/assets/js/matkul.js"></script>
-<script src="<?= BASEURL; ?>/assets/js/mahasiswa.js"></script>
+<script src="<?= BASEURL; ?>/assets/js/pembayaran.js"></script>
 <script>
     new DataTable('#myTable');
 </script>

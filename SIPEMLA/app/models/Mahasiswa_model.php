@@ -32,9 +32,9 @@ class Mahasiswa_model
 
     public function hapus($id)
     {
-        $query = "DELETE FROM matakuliah WHERE kodematakuliah = :kodematakuliah";
+        $query = "DELETE FROM mahasiswa WHERE stambuk = :stambuk";
         $this->db->query($query);
-        $this->db->bind('kodematakuliah', $id);
+        $this->db->bind('stambuk', $id);
 
         $this->db->execute();
 
@@ -43,19 +43,20 @@ class Mahasiswa_model
 
     public function tampilById($id)
     {
-        $this->db->query("SELECT stambuk, nama, prodi, kelas.namekelas FROM mahasiswa JOIN kelas ON mahasiswa.idkelas = kelas.idkelas WHERE stambuk = :stambuk;");
+        $this->db->query("SELECT stambuk, nama, prodi, kelas.idkelas, kelas.namekelas FROM mahasiswa JOIN kelas ON mahasiswa.idkelas = kelas.idkelas WHERE stambuk = :stambuk;");
         $this->db->bind('stambuk', $id);
         return $this->db->single();
     }
 
     public function edit($data)
     {
-        $query = "UPDATE matakuliah SET kodematakuliah= :kodematakuliah, namamatakuliah= :namamatakuliah, sks= :sks WHERE kodematakuliah= :old_kodematakuliah";
+        $query = "UPDATE mahasiswa SET stambuk= :stambuk, nama= :nama, prodi= :prodi, idkelas= :idkelas WHERE stambuk= :old_stambuk";
         $this->db->query($query);
-        $this->db->bind('kodematakuliah', $data['kodematakuliah']);
-        $this->db->bind('namamatakuliah', $data['namamatakuliah']);
-        $this->db->bind('sks', $data['sks']);
-        $this->db->bind('old_kodematakuliah', $data['old_kodematakuliah']);
+        $this->db->bind('stambuk', $data['stambuk']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('prodi', $data['prodi']);
+        $this->db->bind('idkelas', $data['idkelas']);
+        $this->db->bind('old_stambuk', $data['old_stambuk']);
 
         $this->db->execute();
 
