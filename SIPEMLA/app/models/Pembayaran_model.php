@@ -49,6 +49,13 @@ class Pembayaran_model
         return $this->db->single();
     }
 
+    public function tampilByStambuk($stambuk)
+    {
+        $this->db->query("SELECT * FROM pembayaran WHERE stambuk= :stambuk");
+        $this->db->bind('stambuk', $stambuk);
+        return $this->db->single();
+    }
+
     public function edit($data)
     {
         $query = "UPDATE pembayaran SET stambuk= :stambuk, waktupembayaran= :waktupembayaran, nominal= :nominal, status= :status WHERE idpembayaran= :idpembayaran";

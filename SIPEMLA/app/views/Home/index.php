@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?=BASEURL?>/assets/css/Home.css" />
+<link rel="stylesheet" href="<?= BASEURL ?>/assets/css/Home.css" />
 <div class="container-home">
     <div class="container text-center">
         <div class="row d-flex justify-content-center align-items-center">
@@ -10,11 +10,16 @@
                     <div class="card-body">
                         <h5 class="card-body">CHECK PEMBAYARAN</h5>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <?php stambukCek::flash(); ?>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <div class="card form-cek-pembayaran d-flex justify-content-center align-items-center">
-                            <form action="" method="">
+                            <form action="<?= BASEURL; ?>/Home/check" method="POST">
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" name="input-stambuk" placeholder="Masukkan Stambuk">
+                                    <input type="text" class="form-control" name="stambuk" placeholder="Masukkan Stambuk">
                                 </div>
                                 <button type="submit" class="btn-cek">Check</button>
                             </form>
