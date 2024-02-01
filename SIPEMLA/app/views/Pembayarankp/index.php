@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/pembayarankp.css">
 <div class="container-usermanagement1">
     <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="http://localhost/SIPEMLA/" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
+        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
     </div>
     <div class="mt-3 ms-3 mb-5">
         <h5>Pembayaran</h5>

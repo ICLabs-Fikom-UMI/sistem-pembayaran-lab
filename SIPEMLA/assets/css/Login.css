@@ -2,7 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: url("../img/bg-home2.JPG") center/cover no-repeat;
+  background: url("../img/bg-home.png") center/cover no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -14,14 +14,12 @@ body {
   ); /* Nilai transparansi diatur melalui alpha (0-1) */
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.col .card-body .fikom-Login {
+  width: 85%;
+  height: auto;
 }
-
 .col .fikom-icon {
-  width: 130%;
+  width: 90%;
   height: auto;
 }
 
@@ -33,8 +31,8 @@ input::-webkit-inner-spin-button {
 }
 
 .col .cek-pembayaran .card-body .form-cek-pembayaran {
-  height: 170px;
-  width: auto;
+  height: 300px;
+  width: 250px;
   border-radius: 20px;
 }
 

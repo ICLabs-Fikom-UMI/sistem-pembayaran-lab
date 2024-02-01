@@ -3,14 +3,20 @@
 class Pembayaran extends Controller {
     public function index()
     {
-        $data['title'] = 'Pembayaran';
-        $data['pembayaran'] = $this->model('Pembayaran_model')->tampil();
-
-        $this->view('templates/header', $data);
-        $this->view('templates/sidebar');
-        $this->view('Pembayaran/index', $data);
-        $this->view('templates/footersidebar');
-        $this->view('templates/footer');
+        if($_SESSION['role'] == 'Admin'){
+            $data['title'] = 'Pembayaran';
+            $data['pembayaran'] = $this->model('Pembayaran_model')->tampil();
+    
+            $this->view('templates/header', $data);
+            $this->view('templates/sidebar');
+            $this->view('Pembayaran/index', $data);
+            $this->view('templates/footersidebar');
+            $this->view('templates/footer');
+        }else{
+            header("Location:" . BASEURL . "/Berandakp");
+            exit();
+        }
+        
     }
 
     public function tambah()

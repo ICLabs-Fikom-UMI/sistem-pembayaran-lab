@@ -4,14 +4,19 @@ class Matakuliah extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Mata Kuliah';
-        $data['matkul'] = $this->model('Matkul_model')->tampil();
-
-        $this->view('templates/header', $data);
-        $this->view('templates/sidebar');
-        $this->view('Matakuliah/index', $data);
-        $this->view('templates/footersidebar');
-        $this->view('templates/footer');
+        if($_SESSION['role'] == 'Admin'){
+            $data['title'] = 'Mata Kuliah';
+            $data['matkul'] = $this->model('Matkul_model')->tampil();
+    
+            $this->view('templates/header', $data);
+            $this->view('templates/sidebar');
+            $this->view('Matakuliah/index', $data);
+            $this->view('templates/footersidebar');
+            $this->view('templates/footer');
+        }else{
+            header("Location:" . BASEURL . "/Berandakp");
+            exit();
+        }
     }
     public function tambah()
     {

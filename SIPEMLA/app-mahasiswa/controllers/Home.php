@@ -1,30 +1,14 @@
 <?php
-session_start();
 
 class Home extends Controller {
     public function index()
     {
-        if(!isset($_SESSION['username'])){
-            $data['title'] = 'Home';
-    
-            $this->view('templates/header', $data);
-            $this->view('templates/navbar');
-            $this->view('Home/index', $data);
-            $this->view('templates/footer');
-        }else{
-            if($_SESSION['role'] == 'Admin'){
-                $data['title'] = 'Beranda';
-        
-                $this->view('templates/header', $data);
-                $this->view('templates/sidebar');
-                $this->view('Beranda/index');
-                $this->view('templates/footersidebar');
-                $this->view('templates/footer');
-            }else{
-                header("Location:" . BASEURL . "/Berandakp");
-                exit();
-            }
-        }
+        $data['title'] = 'Home';
+
+        $this->view('templates/header', $data);
+        $this->view('templates/navbar');
+        $this->view('Home/index', $data);
+        $this->view('templates/footer');
     }
 
     public function check()

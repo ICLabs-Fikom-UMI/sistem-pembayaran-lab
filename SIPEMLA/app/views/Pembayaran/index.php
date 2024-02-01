@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/pembayaran.css">
+<?php
+session_start();
+?>
 <div class="container-usermanagement1">
     <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="http://localhost/SIPEMLA/" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
+        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
     </div>
     <div class="mt-5 ms-3 mb-2">
         <h5>Pembayaran</h5>
@@ -67,7 +70,7 @@
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/Pembayaran/tambah" method="post">
                     <input type="hidden" id="hidden-idpembayaran" name="idpembayaran">
-                    <input type="hidden" name="iduser" value="1">
+                    <input type="hidden" name="iduser" value="<?=$_SESSION['iduser']?>">
                     <div class="mb-3">
                         <label for="kode-stambuk" class="form-label">Stambuk</label>
                         <input type="number" class="form-control input-stambuk" id="input-stambuk" name="stambuk" placeholder="Masukkan Stambuk">
