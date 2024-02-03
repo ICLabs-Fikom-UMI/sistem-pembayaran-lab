@@ -1,9 +1,6 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/matakuliah.css">
 <div class="container-usermanagement1">
-    <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar?')">Logout</a>
-    </div>
-    <div class="mt-3 ms-3 mb-2">
+    <div class="mt-3 ms- mb-2">
         <h5>Mata Kuliah</h5>
     </div>
     <div class="row">
@@ -16,7 +13,7 @@
             <div class="container-btn-add">
                 <button class="btn-add add-matkul mb-1" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
+            <div class="overflow-y-auto p-4" style="max-height: 80vh;">
                 <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 750px;">
                     <table id="myTable" class="table table-bordered table-striped " style="width:100%;">
                         <thead>

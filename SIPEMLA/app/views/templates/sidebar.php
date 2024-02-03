@@ -1,34 +1,51 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/sidebar.css" />
 <body?>
   <div class="container-fluid">
-    <div class="row">
-      <nav class="col-md-2 d-none d-md-block sidebar">
-        <div class="sidebar-logo">
-          <a href="http://localhost/SIPEMLA/Beranda">
-            <img src="<?= BASEURL ?>/assets/img/logo-sipemla.png" alt="Logo SIPEMLA" />
+    <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-0 px-0 bg">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+          <a href="<?= BASEURL ?>/Beranda" class="d-flex align-items-center pb-3 mb-md-5 me-md-auto text-white text-decoration-none mt-3">
+            <i class="fs-4 me-2"><img style="width: 60px; height: auto" src="<?= BASEURL ?>/assets/img/logo-sipemla.png" alt="logo-sipemla" /></i>
+            <span class="fs-5 d-none d-sm-inline">SIPEMLA</span>
           </a>
-          <h5 class="link-sipemla">
-            SIPEMLA
-          </h5>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item">
+              <a href="<?= BASEURL ?>/Beranda" class="nav-link align-middle px-2">
+                <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/Beranda-icon.png" alt="logo-sipemla" /></i>
+                <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?= BASEURL ?>/Usermanagement" data-bs-toggle="collapse" class="nav-link px-2 align-middle">
+                <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/user-icon.png" alt="logo-sipemla" /></i>
+                <span class="ms-1 d-none d-sm-inline">Usermanagement</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?= BASEURL ?>/Datamahasiswa" class="nav-link px-2 align-middle">
+                <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/mahasiswa-icon.png" alt="logo-sipemla" /></i>
+                <span class="ms-1 d-none d-sm-inline">Data Mahasiswa</span></a>
+            </li>
+            <li>
+              <a href="<?= BASEURL ?>/Matakuliah" class="nav-link px-2 align-middle">
+                <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/matkul-icon.png" alt="logo-sipemla" /></i>
+                <span class="ms-1 d-none d-sm-inline">Mata Kuliah</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?= BASEURL ?>/Pembayaran" class="nav-link px-2 align-middle">
+                <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/pembayaran-icon.png" alt="logo-sipemla" /></i>
+                <span class="ms-1 d-none d-sm-inline">Pembayaran</span>
+              </a>
+            </li>
+          </ul>
+          <hr />
+          <div class="pb-4" id="menu">
+            <a href="<?= BASEURL ?>/Login/keluar" class="d-flex align-items-center text-white text-decoration-none nav-link px-2 rounded-3" onclick="return confirm('Anda Yakin Ingin Keluar?')">
+              <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/logout-icon.png" alt="logo-logout" /></i>
+              <span class="d-none d-sm-inline mx-1">Logout</span>
+            </a>
+          </div>
         </div>
-        <ul class="sidebar-menu">
-          <li>
-            <a href="http://localhost/SIPEMLA/Beranda"><img src="<?= BASEURL ?>/assets/img/Beranda-icon.png" alt="Icon 1" />Beranda</a>
-          </li>
-          <li>
-            <a href="http://localhost/SIPEMLA/Usermanagement"><img src="<?= BASEURL ?>/assets/img/user-icon.png" alt="Icon 2" />User Management</a>
-          </li>
-          <li>
-            <a href="http://localhost/SIPEMLA/Datamahasiswa"><img src="<?= BASEURL ?>/assets/img/mahasiswa-icon.png" alt="Icon 3" />Data Mahasiswa</a>
-          </li>
-          <li>
-            <a href="http://localhost/SIPEMLA/Matakuliah"><img src="<?= BASEURL ?>/assets/img/matkul-icon.png" alt="Icon 4" />Mata Kuliah</a>
-          </li>
-          <li>
-            <a href="http://localhost/SIPEMLA/Pembayaran"><img src="<?= BASEURL ?>/assets/img/pembayaran-icon.png" alt="Icon 5" />Pembayaran</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Content area -->
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 ">
+      </div>
+      <div class="col py-3">

@@ -8,7 +8,7 @@
     </div>
     <div>
         <div class="container-user col-12 mx-auto mt-5">
-            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
+            <div class="overflow-y-auto p-4" style="max-height: 80vh;">
                 <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 750px;">
                     <table id="myTable" class="table table-bordered table-striped " style="width:100%">
                         <thead>
