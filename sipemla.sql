@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2024 at 05:52 PM
+-- Generation Time: Feb 03, 2024 at 03:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -72,11 +72,11 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`stambuk`, `nama`, `prodi`, `idkelas`) VALUES
-('085348057007', 'syahrul gunawan', 'Sistem Informasi', 1),
-('0887679078', 'adam', 'Teknik Informatika', 3),
-('0957897', 'coba coba', 'Sistem Informasi', 8),
-('123984789374', 'lanfu lagi', 'Teknik Informatika', 4),
-('13020200318', 'syahrin', 'Teknik Informatika', 6);
+('13020200318', 'syahrin', 'Teknik Informatika', 6),
+('13020210134', 'Nasrullah', 'Teknik Informatika', 1),
+('13020210202', 'Naufal', 'Teknik Informatika', 3),
+('13120210004', 'arya', 'Sistem Informasi', 1),
+('13120210005', 'furqon', 'Sistem Informasi', 1);
 
 -- --------------------------------------------------------
 
@@ -131,16 +131,14 @@ INSERT INTO `matkul_select` (`id`, `stambuk`, `kodematakuliah`) VALUES
 (3, '13020200318', '001'),
 (4, '13020200318', '002'),
 (5, '13020200318', '009'),
-(8, '0887679078', '001'),
-(10, '0957897', '007'),
-(11, '0957897', '009'),
-(12, '0957897', '010'),
-(33, '085348057007', '001'),
-(34, '085348057007', '002'),
-(35, '085348057007', '003'),
-(44, '123984789374', '006'),
-(45, '123984789374', '007'),
-(46, '123984789374', '008');
+(60, '13120210004', '010'),
+(61, '13120210004', '013'),
+(62, '13120210004', '014'),
+(65, '13120210005', '009'),
+(66, '13120210005', '010'),
+(67, '13020210202', '008'),
+(68, '13020210202', '009'),
+(69, '13020210202', '010');
 
 -- --------------------------------------------------------
 
@@ -162,8 +160,9 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`idpembayaran`, `iduser`, `stambuk`, `waktupembayaran`, `nominal`, `status`) VALUES
-(2, 1, '085348057007', '2024-01-30', 100000, 'Lunas'),
-(3, 1, '123984789374', '2024-01-17', 220000, 'Lunas');
+(4, 1, '13120210004', '0000-00-00', 165000, 'Belum Lunas'),
+(5, 1, '13020200318', '2024-02-13', 220000, 'Lunas'),
+(6, 1, '13020200318', '0000-00-00', 110000, 'Belum Lunas');
 
 -- --------------------------------------------------------
 
@@ -247,13 +246,13 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `matkul_select`
 --
 ALTER TABLE `matkul_select`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `idpembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idpembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
