@@ -30,6 +30,7 @@ body {
   margin-bottom: 15px; /* Memberikan margin di bawah card */
   border-radius: 10px; /* Mengatur sudut card */
   overflow: hidden;
+  box-shadow: 7px 7px 10px #888888;
 }
 
 .card img {

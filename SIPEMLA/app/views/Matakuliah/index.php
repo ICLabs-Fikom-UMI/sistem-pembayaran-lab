@@ -12,44 +12,46 @@
         </div>
     </div>
     <div>
-        <div class="container-user col-11 mx-auto">
+        <div class="container-user col-12 mx-auto">
             <div class="container-btn-add">
-                <button class="btn-add add-matkul mb-3" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
+                <button class="btn-add add-matkul mb-1" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll;">
-                <table id="myTable" class="table table-bordered table-striped " style="width:100%;">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Kode Mata Kuliah</th>
-                            <th>Nama Mata Kuliah</th>
-                            <th>SKS</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-    
-                        <?php
-                        $no = 0;
-                        foreach ($data['matkul'] as $matkul) :
-                            $no++;
-                        ?>
-    
+            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
+                <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 1000px;">
+                    <table id="myTable" class="table table-bordered table-striped " style="width:100%;">
+                        <thead>
                             <tr>
-                                <td><?= $no; ?></td>
-                                <td><?= $matkul['kodematakuliah']; ?></td>
-                                <td><?= $matkul['namamatakuliah']; ?></td>
-                                <td><?= $matkul['sks']; ?></td>
-                                <td>
-                                    <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                    <a class="btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                                </td>
+                                <th>No</th>
+                                <th>Kode Mata Kuliah</th>
+                                <th>Nama Mata Kuliah</th>
+                                <th>SKS</th>
+                                <th>Action</th>
                             </tr>
+                        </thead>
+                        <tbody>
     
-                        <?php endforeach; ?>
+                            <?php
+                            $no = 0;
+                            foreach ($data['matkul'] as $matkul) :
+                                $no++;
+                            ?>
     
-                    </tbody>
-                </table>
+                                <tr>
+                                    <td><?= $no; ?></td>
+                                    <td><?= $matkul['kodematakuliah']; ?></td>
+                                    <td><?= $matkul['namamatakuliah']; ?></td>
+                                    <td><?= $matkul['sks']; ?></td>
+                                    <td>
+                                        <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                        <a class="btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                    </td>
+                                </tr>
+    
+                            <?php endforeach; ?>
+    
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

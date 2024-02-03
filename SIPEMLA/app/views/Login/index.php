@@ -20,8 +20,11 @@ session_start();
                 <div class="mt-4" style="text-align: right;">
                     <a href="<?= BASEURL; ?>/Home" role="button" class="btn btn-primary">Back</a>
                 </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card cek-pembayaran p-3 gb-dark text-light opacity-75" style="width: 20rem;">
+                <div class="cola col-md-6 d-flex justify-content-center">
+                    <img class="fikom-icon" src="<?= BASEURL ?>/assets/img/fikom-icons.png" alt="fikom">
+                </div>
+                <div class="cola col-md-6 d-flex justify-content-center mt-5">
+                    <div class="card cek-pembayaran p-3" style="width: 20rem;">
                         <div class="card-body">
                             <img class="fikom-Login" src="<?= BASEURL ?>/assets/img/Login.png" alt="Logo-Login">
                         </div>
@@ -42,21 +45,18 @@ session_start();
                                     <div class="mb-3">
                                         <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="password">
                                     </div>
-                                    <div class="mb-3">
+                                    <!-- <div class="mb-3">
                                         <select class="form-select" aria-label="Default select example" name="role">
                                             <option selected>Role</option>
                                             <option value="Admin">Admin</option>
                                             <option value="Kepala Lab">Kepala Lab</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <button type="submit" class="btn-cek">Login</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <img class="fikom-icon" src="<?= BASEURL ?>/assets/img/fikom-icons.png" alt="fikom">
                 </div>
             </div>
         </div>

@@ -51,9 +51,16 @@ class Pembayaran_model
 
     public function tampilByStambuk($stambuk)
     {
-        $this->db->query("SELECT * FROM pembayaran WHERE stambuk= :stambuk");
+        $this->db->query("SELECT * FROM pembayaran WHERE stambuk= :stambuk ORDER BY idpembayaran DESC");
         $this->db->bind('stambuk', $stambuk);
         return $this->db->single();
+    }
+
+    public function tampilByStambuk_pmb($stambuk)
+    {
+        $this->db->query("SELECT * FROM pembayaran WHERE stambuk= :stambuk");
+        $this->db->bind('stambuk', $stambuk);
+        return $this->db->resultSet();
     }
 
     public function edit($data)

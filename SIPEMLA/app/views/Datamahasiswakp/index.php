@@ -8,7 +8,7 @@
     </div>
     <div>
         <div class="container-user rounded col-11 mx-auto mt-5">
-            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll;">
+            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll; box-shadow: 5px 5px 10px #888888; padding: 20px; border-radius: 5px;">
                 <table id="myTable" class="table table-bordered table-striped " style="width:100%">
                     <thead>
                         <tr>

@@ -34,10 +34,12 @@ class Home extends Controller {
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampilById($stambuk);
         $data['matkul_select'] = $this->model('Select_matkul_model')->tampilById($stambuk);
         $data['pembayaran'] =$this->model('Pembayaran_model')->tampilByStambuk($stambuk);
+        $data['pmb'] =$this->model('Pembayaran_model')->tampilByStambuk_pmb($stambuk);
         if($data['pembayaran']>0){
             $data['mahasiswa'];
             $data['matkul_select'];
             $data['pembayaran'];
+            $data['pmb'];
             $this->view('templates/header', $data);
             $this->view('templates/navbar');
             $this->view('Home/check', $data);

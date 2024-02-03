@@ -16,7 +16,7 @@
             <div class="container-btn-add mb-3">
                 <button class="btn-add" type="submit" data-bs-toggle="modal" data-bs-target="#formMahasiswa"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll;">
+            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll; box-shadow: 5px 5px 10px #888888; padding: 20px; border-radius: 5px;">
                 <table id="myTable" class="table table-bordered table-striped " style="width:100%">
                     <thead>
                         <tr>
