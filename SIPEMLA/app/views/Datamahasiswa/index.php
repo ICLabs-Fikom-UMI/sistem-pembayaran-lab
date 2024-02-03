@@ -12,43 +12,45 @@
         </div>
     </div>
     <div>
-        <div class="container-user rounded col-11 mx-auto">
+        <div class="container-user rounded col-12 mx-auto">
             <div class="container-btn-add mb-3">
                 <button class="btn-add" type="submit" data-bs-toggle="modal" data-bs-target="#formMahasiswa"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll; box-shadow: 5px 5px 10px #888888; padding: 20px; border-radius: 5px;">
-                <table id="myTable" class="table table-bordered table-striped " style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Stambuk</th>
-                            <th>Nama</th>
-                            <th>Kelas</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $no = 0;
-                        foreach ($data['mahasiswa'] as $mhs) :
-                            $no++;
-                        ?>
+            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
+                <div class="overflow-x-auto rounded-4 shadow-lg p-4" style="min-width: 750px;">
+                    <table id="myTable" class="table table-bordered table-striped " style="width:100%">
+                        <thead>
                             <tr>
-                                <td><?= $no; ?></td>
-                                <td><?= $mhs['stambuk']; ?></td>
-                                <td><?= $mhs['nama']; ?></td>
-                                <td><?= $mhs['namekelas']; ?></td>
-                                <td>
-                                    <a class="btn-edit" role="button" href="<?= BASEURL; ?>/Datamahasiswa/editTampil/<?= $mhs['stambuk'] ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                    <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Datamahasiswa/hapus/<?= $mhs['stambuk'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                                    <a style="text-decoration: none;" class="btn-detail detail-mahasiswa" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>">Detail</a>
-                                </td>
+                                <th>No</th>
+                                <th>Stambuk</th>
+                                <th>Nama</th>
+                                <th>Kelas</th>
+                                <th>Action</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 0;
+                            foreach ($data['mahasiswa'] as $mhs) :
+                                $no++;
+                            ?>
+                                <tr>
+                                    <td><?= $no; ?></td>
+                                    <td><?= $mhs['stambuk']; ?></td>
+                                    <td><?= $mhs['nama']; ?></td>
+                                    <td><?= $mhs['namekelas']; ?></td>
+                                    <td>
+                                        <a class="btn-edit" role="button" href="<?= BASEURL; ?>/Datamahasiswa/editTampil/<?= $mhs['stambuk'] ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                        <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Datamahasiswa/hapus/<?= $mhs['stambuk'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                        <a style="text-decoration: none;" class="btn-detail detail-mahasiswa" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>">Detail</a>
+                                    </td>
+                                </tr>
 
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -80,7 +82,7 @@
                             <?php
                             foreach ($data['kelas'] as $kls) :
                             ?>
-                                <option value="<?= $kls['idkelas'];?>"><?= $kls['namekelas']; ?></option>
+                                <option value="<?= $kls['idkelas']; ?>"><?= $kls['namekelas']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -15,44 +15,46 @@ session_start();
         </div>
     </div>
     <div>
-        <div class="container-user col-11 mx-auto">
+        <div class="container-user col-12 mx-auto">
             <div class="container-btn-add mb-3">
                 <button class="btn-add add-pembayaran" type="submit" data-bs-toggle="modal" data-bs-target="#formPembayaran"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll; box-shadow: 5px 5px 10px #888888; padding: 20px; border-radius: 5px;">
-                <table id="myTable" class="table table-bordered table-striped" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Stambuk</th>
-                            <th>Waktu Pembayaran</th>
-                            <th>Nominal</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $no = 0;
-                        foreach ($data['pembayaran'] as $pmb) :
-                            $no++;
-                        ?>
+            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
+                <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 750px;">
+                    <table id="myTable" class="table table-bordered table-striped" style="width:100%">
+                        <thead>
                             <tr>
-                                <td><?= $no; ?></td>
-                                <td><?= $pmb['stambuk']; ?></td>
-                                <td><?= $pmb['waktupembayaran']; ?></td>
-                                <td>Rp. <?= $pmb['nominal']; ?></td>
-                                <td><?= $pmb['status']; ?></td>
-                                <td>
-                                    <a class="btn-edit edit-pembayaran" role="button" href="<?= BASEURL; ?>/Pembayaran/editTampil/<?= $pmb['idpembayaran'] ?>" data-bs-toggle="modal" data-bs-target="#formPembayaran" data-id="<?= $pmb['idpembayaran']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                    <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Pembayaran/hapus/<?= $pmb['idpembayaran'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                                </td>
+                                <th>No</th>
+                                <th>Stambuk</th>
+                                <th>Waktu Pembayaran</th>
+                                <th>Nominal</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 0;
+                            foreach ($data['pembayaran'] as $pmb) :
+                                $no++;
+                            ?>
+                                <tr>
+                                    <td><?= $no; ?></td>
+                                    <td><?= $pmb['stambuk']; ?></td>
+                                    <td><?= $pmb['waktupembayaran']; ?></td>
+                                    <td>Rp. <?= $pmb['nominal']; ?></td>
+                                    <td><?= $pmb['status']; ?></td>
+                                    <td>
+                                        <a class="btn-edit edit-pembayaran" role="button" href="<?= BASEURL; ?>/Pembayaran/editTampil/<?= $pmb['idpembayaran'] ?>" data-bs-toggle="modal" data-bs-target="#formPembayaran" data-id="<?= $pmb['idpembayaran']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                        <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Pembayaran/hapus/<?= $pmb['idpembayaran'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                    </td>
+                                </tr>
 
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +72,7 @@ session_start();
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/Pembayaran/tambah" method="post">
                     <input type="hidden" id="hidden-idpembayaran" name="idpembayaran">
-                    <input type="hidden" name="iduser" value="<?=$_SESSION['iduser']?>">
+                    <input type="hidden" name="iduser" value="<?= $_SESSION['iduser'] ?>">
                     <div class="mb-3">
                         <label for="kode-stambuk" class="form-label">Stambuk</label>
                         <input type="number" class="form-control input-stambuk" id="input-stambuk" name="stambuk" placeholder="Masukkan Stambuk">

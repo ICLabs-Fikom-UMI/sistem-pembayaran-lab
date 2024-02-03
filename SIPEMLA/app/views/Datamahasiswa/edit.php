@@ -11,11 +11,11 @@
         </div>
     </div>
 
-    <div style="max-height: 75vh; overflow-x: hidden; overflow-y: scroll;">
-        <div class="container-user rounded">
-            <div class="row justify-content-center">
+    <div class="overflow-y-auto" style="max-height: 75vh;">
+        <div class="container p-4">
+            <div class="row rounded-4 shadow-lg">
 
-                <div class="col-8">
+                <div class="col-12 col-md-8 mt-3 mx-auto">
                     <input type="hidden" name="old_stambuk" value="<?= $data['mahasiswa']['stambuk']; ?>">
                     <div class="mb-3 d-flex">
                         <label for="kode-stambuk" class="form-label col-4">Stambuk</label>

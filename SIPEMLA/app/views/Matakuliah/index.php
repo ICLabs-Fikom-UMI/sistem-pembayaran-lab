@@ -17,7 +17,7 @@
                 <button class="btn-add add-matkul mb-1" type="submit" data-bs-toggle="modal" data-bs-target="#formUser"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
             <div class="overflow-y-auto p-4" style="max-height: 75vh;">
-                <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 1000px;">
+                <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 750px;">
                     <table id="myTable" class="table table-bordered table-striped " style="width:100%;">
                         <thead>
                             <tr>
@@ -42,8 +42,8 @@
                                     <td><?= $matkul['namamatakuliah']; ?></td>
                                     <td><?= $matkul['sks']; ?></td>
                                     <td>
-                                        <a class="btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                        <a class="btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                        <a class="col btn-edit edit-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/edit/<?= $matkul['kodematakuliah'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $matkul['kodematakuliah']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                        <a class="col btn-delete delete-matkul" role="button" href="<?= BASEURL; ?>/Matakuliah/hapus/<?= $matkul['kodematakuliah'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
                                     </td>
                                 </tr>
     
