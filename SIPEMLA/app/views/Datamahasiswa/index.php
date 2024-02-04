@@ -1,9 +1,6 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/datamahasiswa.css">
 <div class="container-usermanagement1">
-    <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
-    </div>
-    <div class="mt-5 ms-3 mb-2">
+    <div class="mt-5 ms-4 mb-2">
         <h5>Data Mahasiswa</h5>
     </div>
     <div class="row">
@@ -13,10 +10,10 @@
     </div>
     <div>
         <div class="container-user rounded col-12 mx-auto">
-            <div class="container-btn-add mb-3">
+            <div class="container-btn-add me-5">
                 <button class="btn-add" type="submit" data-bs-toggle="modal" data-bs-target="#formMahasiswa"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
-            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
+            <div class="overflow-y-auto p-4" style="max-height: 73vh;">
                 <div class="overflow-x-auto rounded-4 shadow-lg p-4" style="min-width: 750px;">
                     <table id="myTable" class="table table-bordered table-striped " style="width:100%">
                         <thead>
@@ -41,8 +38,8 @@
                                     <td><?= $mhs['namekelas']; ?></td>
                                     <td>
                                         <a class="btn-edit" role="button" href="<?= BASEURL; ?>/Datamahasiswa/editTampil/<?= $mhs['stambuk'] ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                        <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Datamahasiswa/hapus/<?= $mhs['stambuk'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                                        <a style="text-decoration: none;" class="btn-detail detail-mahasiswa" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>">Detail</a>
+                                        <a class="btn-delete ms-1" role="button" href="<?= BASEURL; ?>/Datamahasiswa/hapus/<?= $mhs['stambuk'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
+                                        <a class="btn-detail text-decoration-none ms-1" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>"><img src="<?= BASEURL ?>/assets/img/detail.png" alt="icon-detail"></a>
                                     </td>
                                 </tr>
 

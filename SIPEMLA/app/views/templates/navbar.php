@@ -1,7 +1,7 @@
     <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/navbar.css" />
 
     <body>
-      <nav class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark opacity-75">
         <div class="container-fluid">
           <!-- Logo and Brand -->
           <a class="navbar-brand" href="#">

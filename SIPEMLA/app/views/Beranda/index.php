@@ -1,8 +1,5 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/Beranda.css">
 <div class="container-beranda1">
-    <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
-    </div>
     <div class="container-card mt-5">
         <div class="card">
             <div class="card-block d-flex justify-content-center flex-column align-items-center">

@@ -1,9 +1,6 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/datamahasiswakp.css">
 <div class="container-usermanagement1">
-    <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
-    </div>
-    <div class="mt-3 ms-3 mb-5">
+    <div class="mt-5 ms-4 mb-5">
         <h5>Data Mahasiswa</h5>
     </div>
     <div>
@@ -32,7 +29,7 @@
                                     <td><?= $mhs['nama']; ?></td>
                                     <td><?= $mhs['namekelas']; ?></td>
                                     <td>
-                                        <a style="text-decoration: none;" class="btn-detail detail-mahasiswa" role="button" href="<?= BASEURL; ?>/Datamahasiswakp/detailkp/<?= $mhs['stambuk'] ?>">Detail</a>
+                                    <a class="btn-detail text-decoration-none p-2" role="button" href="<?= BASEURL; ?>/Datamahasiswa/detail/<?= $mhs['stambuk'] ?>"><img src="<?= BASEURL ?>/assets/img/detail.png" alt="icon-detail"></a>
                                     </td>
                                 </tr>
 

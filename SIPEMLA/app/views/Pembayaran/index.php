@@ -3,10 +3,7 @@
 session_start();
 ?>
 <div class="container-usermanagement1">
-    <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
-    </div>
-    <div class="mt-5 ms-3 mb-2">
+    <div class="mt-5 ms-4 mb-2">
         <h5>Pembayaran</h5>
     </div>
     <div class="row">
@@ -16,7 +13,7 @@ session_start();
     </div>
     <div>
         <div class="container-user col-12 mx-auto">
-            <div class="container-btn-add mb-3">
+            <div class="container-btn-add me-5">
                 <button class="btn-add add-pembayaran" type="submit" data-bs-toggle="modal" data-bs-target="#formPembayaran"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
             </div>
             <div class="overflow-y-auto p-4" style="max-height: 75vh;">

@@ -65,13 +65,9 @@ body {
 .btn-detail {
   background-color: #3b4dad; /* Warna latar belakang tombol Delete */
   color: #fff; /* Warna teks tombol Delete */
-  border: none; /* Menghilangkan border tombol */
-  cursor: pointer; /* Mengubah kursor saat di atas tombol */
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 3px;
-  padding-right: 3px;
-  font-size: 15px;
+  /* border: none;
+  padding: 5px 10px;
+  cursor: pointer; */
 }
 .btn-edit,
 .btn-delete,

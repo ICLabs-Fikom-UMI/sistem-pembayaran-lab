@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -14,17 +14,17 @@ session_start();
 </head>
 
 <body>
-    <div class="container-home">
-        <div class="container text-center">
+    <div class="mt-4 me-5 text-end">
+        <a href="<?= BASEURL; ?>/Home" role="button" class="btn btn-info opacity-75 text-white"><img width="25px" height="20" src="<?= BASEURL ?>/assets/img/icon-back.png" alt="icon-back"> Back</a>
+    </div>
+    <div class="container text-center">
+        <div class="container-home">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="mt-4" style="text-align: right;">
-                    <a href="<?= BASEURL; ?>/Home" role="button" class="btn btn-primary">Back</a>
-                </div>
                 <div class="cola col-md-6 d-flex justify-content-center">
                     <img class="fikom-icon" src="<?= BASEURL ?>/assets/img/fikom-icons.png" alt="fikom">
                 </div>
                 <div class="cola col-md-6 d-flex justify-content-center mt-5">
-                    <div class="card cek-pembayaran p-3" style="width: 20rem;">
+                    <div class="card cek-pembayaran p-3 opacity-75" style="width: 20rem;">
                         <div class="card-body">
                             <img class="fikom-Login" src="<?= BASEURL ?>/assets/img/Login.png" alt="Logo-Login">
                         </div>

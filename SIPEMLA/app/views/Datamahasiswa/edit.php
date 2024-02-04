@@ -3,15 +3,15 @@
     <div class=" row mt-5 ms-3 mb-5 ">
         <div class="col-12 d-flex justify-content-between">
             <h5>Edit Data Mahasiswa</h5>
-            <div class="me-5">
+            <div class="text-end">
                 <form action="<?= BASEURL; ?>/Datamahasiswa/editMahasiswa" method="post">
-                    <a href="<?= BASEURL; ?>/Datamahasiswa" type="button" class="btn btn-danger me-2" role="button">Batal</a>
-                    <button href="<?= BASEURL; ?>/Datamahasiswa" type="submit" class="btn btn-primary me-5">Edit Data</button>
+                    <a href="<?= BASEURL; ?>/Datamahasiswa" type="button" class="btn btn-danger me-4 mt-2" role="button">Batal</a>
+                    <button href="<?= BASEURL; ?>/Datamahasiswa" type="submit" class="btn btn-primary me-4 mt-2">Edit Data</button>
             </div>
         </div>
     </div>
 
-    <div class="overflow-y-auto" style="max-height: 75vh;">
+    <div class="overflow-y-auto" style="max-height: 72vh;">
         <div class="container p-4">
             <div class="row rounded-4 shadow-lg">
 
