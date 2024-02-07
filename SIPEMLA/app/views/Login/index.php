@@ -10,12 +10,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['title'] ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/Login.css" />
 </head>
 
 <body>
     <div class="mt-4 me-5 text-end">
-        <a href="<?= BASEURL; ?>/Home" role="button" class="btn btn-info opacity-75 text-white"><img width="25px" height="20" src="<?= BASEURL ?>/assets/img/icon-back.png" alt="icon-back"> Back</a>
+        <a href="<?= BASEURL; ?>/Home" role="button" class="btn btn-info opacity-75 text-white"><i class="fa-solid fa-arrow-left" style="color: #f1f2f3;"></i> Back</a>
     </div>
     <div class="container text-center">
         <div class="container-home">

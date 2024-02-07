@@ -27,7 +27,8 @@ class Pembayaran_model
 
     public function tampil()
     {
-        $this->db->query("SELECT * FROM pembayaran ORDER BY idpembayaran ASC");
+        // $this->db->query("SELECT * FROM pembayaran ORDER BY idpembayaran ASC");
+        $this->db->query("SELECT pembayaran.idpembayaran, pembayaran.iduser, pembayaran.stambuk, pembayaran.waktupembayaran, pembayaran.nominal, pembayaran.status, mahasiswa.nama FROM pembayaran JOIN mahasiswa ON pembayaran.stambuk = mahasiswa.stambuk;");
         return $this->db->resultSet();
     }
 
@@ -76,5 +77,11 @@ class Pembayaran_model
         $this->db->execute();
 
         return $this->db->rowCount();
+    }
+
+    public function countPembayaran()
+    {
+        $this->db->query("SELECT COUNT(idpembayaran) AS jumlahPembayaran FROM pembayaran");
+        return $this->db->single();
     }
 }

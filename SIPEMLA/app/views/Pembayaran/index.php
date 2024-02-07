@@ -1,61 +1,86 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/pembayaran.css">
-<?php
-session_start();
-?>
-<div class="container-usermanagement1">
-    <div class="mt-5 ms-4 mb-2">
-        <h5>Pembayaran</h5>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <?php Flasher::flash(); ?>
-        </div>
-    </div>
-    <div>
-        <div class="container-user col-12 mx-auto">
-            <div class="container-btn-add me-5">
-                <button class="btn-add add-pembayaran" type="submit" data-bs-toggle="modal" data-bs-target="#formPembayaran"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">add</button>
+<div class="row p-2 ms-3 me-3">
+    <div class="col-12 card text-body-secondary shadow-lg bg-light bg-gradient">
+        <div class="row">
+            <div class="col-1 align-self-center">
+                <img src="<?= BASEURL ?>/assets/img/pembayaran.png" alt="foto-card4" width="85px">
             </div>
-            <div class="overflow-y-auto p-4" style="max-height: 75vh;">
-                <div class="overflow-x-auto rounded-4 shadow-lg p-3" style="min-width: 750px;">
-                    <table id="myTable" class="table table-bordered table-striped" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Stambuk</th>
-                                <th>Waktu Pembayaran</th>
-                                <th>Nominal</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $no = 0;
-                            foreach ($data['pembayaran'] as $pmb) :
-                                $no++;
-                            ?>
-                                <tr>
-                                    <td><?= $no; ?></td>
-                                    <td><?= $pmb['stambuk']; ?></td>
-                                    <td><?= $pmb['waktupembayaran']; ?></td>
-                                    <td>Rp. <?= $pmb['nominal']; ?></td>
-                                    <td><?= $pmb['status']; ?></td>
-                                    <td>
-                                        <a class="btn-edit edit-pembayaran" role="button" href="<?= BASEURL; ?>/Pembayaran/editTampil/<?= $pmb['idpembayaran'] ?>" data-bs-toggle="modal" data-bs-target="#formPembayaran" data-id="<?= $pmb['idpembayaran']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
-                                        <a class="btn-delete" role="button" href="<?= BASEURL; ?>/Pembayaran/hapus/<?= $pmb['idpembayaran'] ?>" onclick="return confirm('Anda Yakin Ingin Hapus')"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></a>
-                                    </td>
-                                </tr>
-
-                            <?php endforeach; ?>
-
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col-md-11 card-body">
+                <h5 class="card-title">Pembayaran</h5>
+                <h2 class="card-subtitle mb-2"><?=$data['countpembayaran']['jumlahPembayaran']?></h2>
+                <p class="card-text">Jumlah Pembayaran</p>
             </div>
         </div>
     </div>
+</div>
+<div class="container-user col-12 mx-auto">
+    <div class="overflow-y-auto p-4" style="max-height: 71vh;">
+        <div class="row">
+            <div class="col-lg-6">
+                <?php Flasher::flash(); ?>
+            </div>
+        </div>
+        <div class="overflow-x-auto rounded-4 shadow-lg p-4" style="min-width: 860px;">
+            <div class="text-start mb-3">
+                <button class="btn btn-success opacity-75 add-pembayaran" type="submit" data-bs-toggle="modal" data-bs-target="#formPembayaran"><img src="<?= BASEURL ?>/assets/img/add.png" alt="">Tambah</button>
+            </div>
+            <table id="myTable" class="table table-bordered table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Stambuk</th>
+                        <th>Nama</th>
+                        <th>Waktu Pembayaran</th>
+                        <th>Nominal</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $no = 0;
+                    foreach ($data['pembayaran'] as $pmb) :
+                        $no++;
+                    ?>
+                        <tr>
+                            <td><?= $no; ?></td>
+                            <td><?= $pmb['stambuk']; ?></td>
+                            <td><?= $pmb['nama']; ?></td>
+                            <td><?= $pmb['waktupembayaran']; ?></td>
+                            <td>Rp. <?= $pmb['nominal']; ?></td>
+                            <td><?= $pmb['status']; ?></td>
+                            <td>
+                                <a class="btn-edit edit-pembayaran" role="button" href="<?= BASEURL; ?>/Pembayaran/editTampil/<?= $pmb['idpembayaran'] ?>" data-bs-toggle="modal" data-bs-target="#formPembayaran" data-id="<?= $pmb['idpembayaran']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
+                                <button class="btn-delete" type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<?= $pmb['idpembayaran']; ?>"><img src="<?= BASEURL ?>/assets/img/delete.png" alt="icon-delete"></button>
+                            </td>
+                        </tr>
+                        <!-- Modal Delete -->
+                        <div class="modal fade" id="modalDelete<?= $pmb['idpembayaran']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="w-100">
+                                            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Hapus Data</h1>
+                                        </div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h6 class="text-center">Anda Yakin Ingin Hapus Data ini?</h6>
+                                    </div>
+                                    <div class="modal-footer align-self-center border-top-0">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                                        <a href="<?= BASEURL; ?>/Pembayaran/hapus/<?= $pmb['idpembayaran'] ?>" role="button" class="btn btn-primary">Yes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                    <?php endforeach; ?>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- Modal Edit Tambah-->

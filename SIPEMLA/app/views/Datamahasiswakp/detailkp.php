@@ -3,7 +3,7 @@
     <div class=" row mt-5 ms-3 mb-5 ">
         <div class="col-12 d-flex justify-content-between">
             <h5>Detail Data Mahasiswa</h5>
-            <a href="<?= BASEURL; ?>/Datamahasiswakp" type="button" class="btn btn-primary" role="button">Back</a>
+            <a href="<?= BASEURL; ?>/Datamahasiswakp" type="button" class="btn btn-info opacity-75" role="button">Back</a>
         </div>
     </div>
 

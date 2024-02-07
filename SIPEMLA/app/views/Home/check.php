@@ -3,13 +3,13 @@
     <div class=" row mt-5 mb-2 justify-content-center">
         <div class="col-10 d-flex justify-content-between">
             <h5>Detail Data Mahasiswa</h5>
-            <a href="<?= BASEURL; ?>/Home" type="button" class="btn btn-primary" role="button">Back</a>
+            <a href="<?= BASEURL; ?>/Home" type="button" class="btn btn-info text-white" role="button"><i class="fa-solid fa-arrow-left" style="color: #f1f2f3;"></i> Back</a>
         </div>
     </div>
 
     <div class="container-check overflow-y-auto" style="max-height: 75vh;">
         <div class="container p-4">
-            <div class="row rounded-4 shadow-lg">
+            <div class="row rounded-4 shadow-lg pt-3 pb-3">
 
                 <div class="col-12 col-md-8 mt-4 mb-3 mx-auto">
                     <fieldset disabled>
@@ -54,7 +54,7 @@
                         <div class="mb-2 d-flex">
                             <label for="disabledTextInput" class="form-label col-4">Nominal Pembayaran</label>
                             <div class="col-4">
-                                <input type="text" id="disabledTextInput" class="form-control" value="Rp. <?= $data['pembayaran']['nominal']; ?>">
+                                <input type="text" id="disabledTextInput" class="form-control" value="Rp. <?= number_format($sks*55000, 0, ',', '.'); ?>">
                             </div>
                         </div>
                         <div class="mt-3 d-flex">
@@ -90,7 +90,7 @@
                                     <td><?= $no; ?></td>
                                     <td><?= $pmb['stambuk']; ?></td>
                                     <td><?= $pmb['waktupembayaran']; ?></td>
-                                    <td>Rp. <?= $pmb['nominal']; ?></td>
+                                    <td>Rp. <?= number_format($pmb['nominal'], 0, ',', '.'); ?></td>
                                     <td><?= $pmb['status']; ?></td>
                                 </tr>
         

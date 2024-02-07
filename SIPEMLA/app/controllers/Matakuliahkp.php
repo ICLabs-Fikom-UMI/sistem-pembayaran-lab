@@ -6,6 +6,7 @@ class Matakuliahkp extends Controller {
         if($_SESSION['role'] == 'Kepala Lab'){
             $data['title'] = 'Mata Kuliah';
             $data['matkul'] = $this->model('Matkul_model')->tampil();
+            $data['countmatkul'] = $this->model('Matkul_model')->countMatkul();
     
             $this->view('templates/header', $data);
             $this->view('templates/sidebarkp');

@@ -62,4 +62,25 @@ class Mahasiswa_model
 
         return $this->db->rowCount();
     }
+
+    // public function daftarMhsAda($data)
+    // {
+    //     $query = "UPDATE mahasiswa SET stambuk= :stambuk, nama= :nama, prodi= :prodi, idkelas= :idkelas WHERE stambuk= :stambuk";
+    //     $this->db->query($query);
+    //     $this->db->bind('stambuk', $data['stambuk']);
+    //     $this->db->bind('nama', $data['nama']);
+    //     $this->db->bind('prodi', $data['prodi']);
+    //     $this->db->bind('idkelas', $data['idkelas']);
+    //     // $this->db->bind('old_stambuk', $data['old_stambuk']);
+
+    //     $this->db->execute();
+
+    //     return $this->db->rowCount();
+    // }
+
+    public function countMahasiswa()
+    {
+        $this->db->query("SELECT COUNT(stambuk) AS jumlahMahasiswa FROM mahasiswa");
+        return $this->db->single();
+    }
 }

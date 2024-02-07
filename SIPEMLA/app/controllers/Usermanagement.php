@@ -7,6 +7,7 @@ class Usermanagement extends Controller
         if($_SESSION['role'] == 'Admin'){
             $data['title'] = 'User Management';
             $data['user'] = $this->model('User_model')->tampil();
+            $data['countuser'] = $this->model('User_model')->countUser();
     
             $this->view('templates/header', $data);
             $this->view('templates/sidebar');

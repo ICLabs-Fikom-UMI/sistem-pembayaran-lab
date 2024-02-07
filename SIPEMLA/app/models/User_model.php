@@ -59,4 +59,9 @@ class User_model
 
         return $this->db->rowCount();
     }
+
+    public function countUser(){
+        $this->db->query("SELECT COUNT(iduser) AS jumlahUser FROM user;");
+        return $this->db->single();
+    }
 }

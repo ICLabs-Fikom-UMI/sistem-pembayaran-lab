@@ -1,31 +1,44 @@
-<link rel="stylesheet" href="<?= BASEURL ?>/assets/css/Berandakp.css">
-<div class="container-beranda1">
-    <div class="container-btn mt-3 ">
-        <a class="btn-logout btn-sm" href="<?= BASEURL ?>/Login/keluar" role="button" onclick="return confirm('Anda Yakin Ingin Keluar')">Logout</a>
+<link rel="stylesheet" href="<?= BASEURL ?>/assets/css/Beranda.css">
+<div class="row p-3">
+    <div class="col-lg-3 p-2">
+        <div class="card p-3 bg-light bg-gradient shadow-lg text-body-secondary">
+            <div class="row">
+                <div class="col-7 card-body">
+                    <h6 class="card-subtitle mb-2">Mahasiswa</h6>
+                    <h2 class="card-title"><?=$data['mahasiswa']['jumlahMahasiswa']?></h2>
+                    <p class="card-text">Jumlah</p>
+                </div>
+                <div class="col-5 align-self-center">
+                    <img src="<?= BASEURL ?>/assets/img/data-mahasiswa.png" alt="foto-card4" width="80px">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container-card mt-5">
-        <div class="card">
-            <div class="card-block d-flex justify-content-center flex-column align-items-center">
-                <a href="http://localhost/SIPEMLA/Berandakp"><img src="<?= BASEURL ?>/assets/img/beranda.png" alt="foto-card1"></a>
-                <h6>Beranda</h6>
+    <div class="col-lg-3 p-2">
+        <div class="card p-3 bg-light bg-gradient shadow-lg text-body-secondary">
+            <div class="row">
+                <div class="col-7 card-body">
+                    <h6 class="card-subtitle mb-2">Mata Kuliah</h6>
+                    <h2 class="card-title"><?=$data['matkul']['jumlahMatkul']?></h2>
+                    <p class="card-text">Jumlah</p>
+                </div>
+                <div class="col-5 align-self-center">
+                    <img src="<?= BASEURL ?>/assets/img/matakuliah.png" alt="foto-card4" width="80px">
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-block d-flex justify-content-center flex-column align-items-center">
-                <a href="http://localhost/SIPEMLA/Datamahasiswakp"><img src="<?= BASEURL ?>/assets/img/data-mahasiswa.png" alt="foto-card2"></a>
-                <h6 class="mt-3">Data Mahasiswa</h6>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block d-flex justify-content-center flex-column align-items-center">
-                <a href="http://localhost/SIPEMLA/Matakuliahkp"><img src="<?= BASEURL ?>/assets/img/matakuliah.png" alt="foto-card3"></a>
-                <h6 class="mt-4">Mata Kuliah</h6>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block d-flex justify-content-center flex-column align-items-center">
-                <a href="http://localhost/SIPEMLA/Pembayarankp"><img src="<?= BASEURL ?>/assets/img/pembayaran.png" alt="foto-card4"></a>
-                <h6 class="mt-2">Pembayaran</h6>
+    </div>
+    <div class="col-lg-3 p-2">
+        <div class="card p-3 bg-light bg-gradient shadow-lg text-body-secondary">
+            <div class="row">
+                <div class="col-7 card-body">
+                    <h6 class="card-subtitle mb-2">Pembayaran</h6>
+                    <h2 class="card-title"><?=$data['pembayaran']['jumlahPembayaran']?></h2>
+                    <p class="card-text">Jumlah</p>
+                </div>
+                <div class="col-5 align-self-center">
+                    <img src="<?= BASEURL ?>/assets/img/pembayaran.png" alt="foto-card4" width="80px">
+                </div>
             </div>
         </div>
     </div>

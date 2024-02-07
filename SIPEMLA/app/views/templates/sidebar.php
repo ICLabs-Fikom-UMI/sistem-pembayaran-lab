@@ -41,10 +41,10 @@
           </ul>
           <hr />
           <div class="pb-4" id="menu">
-            <a href="<?= BASEURL ?>/Login/keluar" class="d-flex align-items-center text-white text-decoration-none nav-link px-2 rounded-3" onclick="return confirm('Anda Yakin Ingin Keluar?')">
+            <button type="button" class="d-flex align-items-center text-white text-decoration-none nav-link px-2 rounded-3" data-bs-toggle="modal" data-bs-target="#modalLogout">
               <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/logout-icon.png" alt="logo-logout" /></i>
               <span class="d-none d-sm-inline mx-1">Logout</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

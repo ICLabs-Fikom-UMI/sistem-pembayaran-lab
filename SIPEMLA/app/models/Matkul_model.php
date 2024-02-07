@@ -60,4 +60,10 @@ class Matkul_model
 
         return $this->db->rowCount();
     }
+
+    public function countMatkul()
+    {
+        $this->db->query("SELECT COUNT(kodematakuliah) AS jumlahMatkul FROM matakuliah");
+        return $this->db->single();
+    }
 }
