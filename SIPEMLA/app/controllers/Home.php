@@ -59,15 +59,25 @@ class Home extends Controller
 
     public function daftarSudah()
     {
-        $data['title'] = 'Daftar Pembayaran';
-        $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampil();
-        $data['matkul'] = $this->model('Matkul_model')->tampil();
-        $data['kelas'] = $this->model('Kelas_model')->tampil();
+        if (!isset($_SESSION['username'])) {
+            $data['title'] = 'Registrasi Pembayaran';
+            $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampil();
+            $data['matkul'] = $this->model('Matkul_model')->tampil();
+            $data['kelas'] = $this->model('Kelas_model')->tampil();
 
-        $this->view('templates/header', $data);
-        $this->view('templates/navbar');
-        $this->view('Home/daftarSudah', $data);
-        $this->view('templates/footer');
+            $this->view('templates/header', $data);
+            $this->view('templates/navbar');
+            $this->view('Home/daftarSudah', $data);
+            $this->view('templates/footer');
+        } else {
+            if ($_SESSION['role'] == 'Admin') {
+                header("Location:" . BASEURL . "/Beranda");
+                exit();
+            } else {
+                header("Location:" . BASEURL . "/Berandakp");
+                exit();
+            }
+        }
     }
 
     public function sudahAda()
@@ -83,6 +93,47 @@ class Home extends Controller
         } else {
             General::setFlash('Mahasiswa', 'Belum Terdaftar', 'danger');
             header('Location: ' . BASEURL . '/Home/daftarSudah');
+            exit;
+        }
+    }
+
+    public function daftarBelum()
+    {
+        if (!isset($_SESSION['username'])) {
+            $data['title'] = 'Registrasi Pembayaran';
+            $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampil();
+            $data['matkul'] = $this->model('Matkul_model')->tampil();
+            $data['kelas'] = $this->model('Kelas_model')->tampil();
+
+            $this->view('templates/header', $data);
+            $this->view('templates/navbar');
+            $this->view('Home/daftarBelum', $data);
+            $this->view('templates/footer');
+        } else {
+            if ($_SESSION['role'] == 'Admin') {
+                header("Location:" . BASEURL . "/Beranda");
+                exit();
+            } else {
+                header("Location:" . BASEURL . "/Berandakp");
+                exit();
+            }
+        }
+    }
+
+    public function belumAda()
+    {
+        if ($this->model('Mahasiswa_model')->tampilByid($_POST["stambuk"]) > 0) {
+            General::setFlash('Mahasiswa', 'Sudah Terdaftar', 'danger');
+            header('Location: ' . BASEURL . '/Home/daftarBelum');
+            exit;
+        } else {
+            $this->model('Mahasiswa_model')->tambah($_POST);
+            $this->model('Select_matkul_model')->hapus($_POST["stambuk"]);
+            $this->model('Select_matkul_model')->tambah($_POST);
+            $this->model('Pembayaran_model')->tambah($_POST);
+
+            General::setFlash('Registrasi Pembayaran', 'Berhasil', 'success');
+            header('Location: ' . BASEURL . '/Home');
             exit;
         }
     }

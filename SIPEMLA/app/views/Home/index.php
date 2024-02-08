@@ -3,7 +3,7 @@
     <div class="container text-center">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="row mt-3">
-                <div class="col-lg-4 mx-auto">
+                <div class="col-lg-4 mx-auto position-relative">
                     <?php General::flash(); ?>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                                     <input type="number" class="form-control" name="stambuk" placeholder="Masukkan Stambuk" required>
                                 </div>
                                 <button type="submit" class="btn-cek ">Check</button>
-                                <button type="button" class="btn btn-light mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalDaftar">Registrasi</button>
+                                <button type="button" class="btn btn-link mt-2 text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalDaftar">Registrasi</button>
                             </form>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                 <h6 class="text-center">Apakah Anda Pernah Membayar di Semester Sebelumnya?</h6>
             </div>
             <div class="modal-footer align-self-center border-top-0">
-                <a href="<?= BASEURL; ?>/" role="button" class="btn btn-secondary">Belum</a>
+                <a href="<?= BASEURL; ?>/Home/daftarBelum" role="button" class="btn btn-secondary">Belum</a>
                 <a href="<?= BASEURL; ?>/Home/daftarSudah" role="button" class="btn btn-primary">Pernah</a>
             </div>
         </div>

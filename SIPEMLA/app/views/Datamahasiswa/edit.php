@@ -16,6 +16,10 @@
             <div class="row rounded-4 shadow-lg">
 
                 <div class="col-12 col-md-8 mt-3 mx-auto">
+                    <input type="hidden" name="iduser" value="<?= $_SESSION['iduser'] ?>">
+                    <input type="hidden" name="idpembayaran" value="<?= $data['pembayaran']['idpembayaran'] ?>">
+                    <input type="hidden" name="status" value="Belum Lunas">
+                    <input type="hidden" name="waktupembayaran" value="">
                     <input type="hidden" name="old_stambuk" value="<?= $data['mahasiswa']['stambuk']; ?>">
                     <div class="mb-3 d-flex">
                         <label for="kode-stambuk" class="form-label col-4">Stambuk</label>
@@ -71,6 +75,7 @@
                                     </div>
                                 <?php endif; ?>
                             <?php endforeach; ?>
+                            <input type="hidden" id="nominalInput" name="nominal" value="">
                         </div>
                     </div>
                     </form>
@@ -81,4 +86,31 @@
     </div>
 </div>
 
-</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mengambil semua elemen checkbox
+        var checkboxes = document.querySelectorAll('.form-check-input');
+
+        // Mendengarkan perubahan pada setiap checkbox
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                updateNominal();
+            });
+        });
+
+        // Fungsi untuk mengupdate nilai nominal
+        function updateNominal() {
+            var checkedBoxCount = 0;
+
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    checkedBoxCount++;
+                }
+            });
+
+            // Mengupdate nilai pada input hidden
+            var nominalInput = document.getElementById('nominalInput');
+            nominalInput.value = checkedBoxCount * 55000;
+        }
+    });
+</script>

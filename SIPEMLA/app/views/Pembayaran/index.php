@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-11 card-body">
                 <h5 class="card-title">Pembayaran</h5>
-                <h2 class="card-subtitle mb-2"><?=$data['countpembayaran']['jumlahPembayaran']?></h2>
+                <h2 class="card-subtitle mb-2"><?= $data['countpembayaran']['jumlahPembayaran'] ?></h2>
                 <p class="card-text">Jumlah Pembayaran</p>
             </div>
         </div>
@@ -41,12 +41,19 @@
                     $no = 0;
                     foreach ($data['pembayaran'] as $pmb) :
                         $no++;
+                        $waktuPembayaran = $pmb['waktupembayaran'];
+
+                        if ($waktuPembayaran != '0000-00-00' && $waktuPembayaran != '') {
+                            $formattedDate = date('d-m-Y', strtotime($waktuPembayaran));
+                        } else {
+                            $formattedDate = '-';
+                        }
                     ?>
                         <tr>
                             <td><?= $no; ?></td>
                             <td><?= $pmb['stambuk']; ?></td>
                             <td><?= $pmb['nama']; ?></td>
-                            <td><?= $pmb['waktupembayaran']; ?></td>
+                            <td><?= $formattedDate; ?></td>
                             <td>Rp. <?= $pmb['nominal']; ?></td>
                             <td><?= $pmb['status']; ?></td>
                             <td>

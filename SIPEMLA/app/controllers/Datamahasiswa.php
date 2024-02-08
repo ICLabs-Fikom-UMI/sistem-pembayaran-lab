@@ -63,8 +63,9 @@ class Datamahasiswa extends Controller
 
     public function hapus($id)
     {
+        $this->model('Pembayaran_model')->hapusByStambuk($id);
+        $this->model('Select_matkul_model')->hapus($id);
         if ($this->model('Mahasiswa_model')->hapus($id) > 0) {
-            $this->model('Select_matkul_model')->hapus($id);
             General::setFlash('Data Berhasil', 'dihapus', 'success');
             header('Location: ' . BASEURL . '/Datamahasiswa');
             exit;
@@ -82,6 +83,7 @@ class Datamahasiswa extends Controller
         $data['kelas'] = $this->model('Kelas_model')->tampil();
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->tampilById($id);
         $data['matkul_select'] = $this->model('Select_matkul_model')->tampilById($id);
+        $data['pembayaran'] = $this->model('Pembayaran_model')->tampilByStambuk($id);
 
         $this->view('templates/header', $data);
         $this->view('templates/sidebar');
@@ -94,7 +96,7 @@ class Datamahasiswa extends Controller
     {
         if ($this->model('Mahasiswa_model')->edit($_POST) > 0) {
             $this->model('Select_matkul_model')->hapus($_POST["old_stambuk"]);
-            $this->model('Select_matkul_model')->tambah($_POST);
+            $this->model('Select_matkul_model')->tambah($_POST);$this->model('Pembayaran_model')->edit($_POST);
             General::setFlash('Data Berhasil', 'diubah', 'success');
             header('Location: ' . BASEURL . '/Datamahasiswa');
             exit;

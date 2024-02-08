@@ -43,6 +43,17 @@ class Pembayaran_model
         return $this->db->rowCount();
     }
 
+    public function hapusByStambuk($id)
+    {
+        $query = "DELETE FROM pembayaran WHERE stambuk = :stambuk";
+        $this->db->query($query);
+        $this->db->bind('stambuk', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
     public function tampilById($id)
     {
         $this->db->query("SELECT * FROM pembayaran WHERE idpembayaran= :idpembayaran");
@@ -62,6 +73,7 @@ class Pembayaran_model
         $this->db->query("SELECT * FROM pembayaran WHERE stambuk= :stambuk");
         $this->db->bind('stambuk', $stambuk);
         return $this->db->resultSet();
+    
     }
 
     public function edit($data)
