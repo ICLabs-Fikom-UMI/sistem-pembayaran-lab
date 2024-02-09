@@ -73,7 +73,6 @@ class Pembayaran_model
         $this->db->query("SELECT * FROM pembayaran WHERE stambuk= :stambuk");
         $this->db->bind('stambuk', $stambuk);
         return $this->db->resultSet();
-    
     }
 
     public function edit($data)

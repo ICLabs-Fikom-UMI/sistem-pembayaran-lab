@@ -7,6 +7,7 @@
 <script src="<?= BASEURL; ?>/assets/js/usermanagement.js"></script>
 <script src="<?= BASEURL; ?>/assets/js/matkul.js"></script>
 <script src="<?= BASEURL; ?>/assets/js/pembayaran.js"></script>
+<script src="<?= BASEURL; ?>/assets/js/beranda.js"></script>
 <script>
     new DataTable('#myTable');
 </script>

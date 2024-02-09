@@ -26,29 +26,6 @@
                     <input type="text" class="form-control input-stambuk" id="input-stambuk" name="stambuk" placeholder="Masukkan Stambuk">
                 </div>
                 <div class="mb-3">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control input-nama" id="input-nama" name="nama" placeholder="Masukkan Nama">
-                </div>
-                <div class="mb-3">
-                    <label for="sks" class="form-label">Kelas</label>
-                    <select class="form-select" aria-label="Default select example" name="idkelas">
-                        <option selected>Pilih Kelas</option>
-                        <?php
-                        foreach ($data['kelas'] as $kls) :
-                        ?>
-                            <option value="<?= $kls['idkelas']; ?>"><?= $kls['namekelas']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="prodi" class="form-label">Prodi</label>
-                    <select class="form-select" aria-label="Default select example" name="prodi">
-                        <option selected>Pilih Prodi</option>
-                        <option value="Teknik Informatika">Teknik Informatika</option>
-                        <option value="Sistem Informasi">Sistem Informasi</option>
-                    </select>
-                </div>
-                <div class="mb-3">
                     <label for="sks" class="form-label">Mata Kuliah</label>
                     <?php
                     foreach ($data['matkul'] as $matkul) :

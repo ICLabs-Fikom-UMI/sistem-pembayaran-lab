@@ -41,20 +41,29 @@
 
                                     <input type="text" id="disabledTextInput" class="form-control mb-3" value="• <?= $matkul['namamatakuliah']; ?>">
 
-                                <?php endforeach; ?>
+                                <?php
+                                endforeach;
+                                $waktuPembayaran = $data['pembayaran']['waktupembayaran'];
+
+                                if ($waktuPembayaran != '0000-00-00' && $waktuPembayaran != '') {
+                                    $formattedDate = date('d-m-Y', strtotime($waktuPembayaran));
+                                } else {
+                                    $formattedDate = '-';
+                                }
+                                ?>
 
                             </div>
                         </div>
                         <div class="mb-2 d-flex">
                             <label for="disabledTextInput" class="form-label col-4">Waktu Pembayaran</label>
                             <div class="col-4">
-                                <input type="text" id="disabledTextInput" class="form-control" value="<?= $data['pembayaran']['waktupembayaran']; ?>">
+                                <input type="text" id="disabledTextInput" class="form-control" value="<?= $formattedDate; ?>">
                             </div>
                         </div>
                         <div class="mb-2 d-flex">
                             <label for="disabledTextInput" class="form-label col-4">Nominal Pembayaran</label>
                             <div class="col-4">
-                                <input type="text" id="disabledTextInput" class="form-control" value="Rp. <?= number_format($sks*55000, 0, ',', '.'); ?>">
+                                <input type="text" id="disabledTextInput" class="form-control" value="Rp. <?= number_format($sks * 55000, 0, ',', '.'); ?>">
                             </div>
                         </div>
                         <div class="mt-3 d-flex">
@@ -67,7 +76,7 @@
                     </fieldset>
                 </div>
             </div>
-            <div class="mt-5 p-4 rounded-4 shadow-lg" >
+            <div class="mt-5 p-4 rounded-4 shadow-lg">
                 <h5 class="mb-4">Riwayat Pembayaran</h5>
                 <div class="overflow-x-scroll">
                     <table id="myTable" class="table table-bordered table-striped" style="width:100%">
@@ -85,17 +94,25 @@
                             $no = 0;
                             foreach ($data['pmb'] as $pmb) :
                                 $no++;
+
+                                $waktuPembayaran = $pmb['waktupembayaran'];
+
+                                if ($waktuPembayaran != '0000-00-00' && $waktuPembayaran != '') {
+                                    $formattedDate = date('d-m-Y', strtotime($waktuPembayaran));
+                                } else {
+                                    $formattedDate = '-';
+                                }
                             ?>
                                 <tr>
                                     <td><?= $no; ?></td>
                                     <td><?= $pmb['stambuk']; ?></td>
-                                    <td><?= $pmb['waktupembayaran']; ?></td>
+                                    <td><?= $formattedDate; ?></td>
                                     <td>Rp. <?= number_format($pmb['nominal'], 0, ',', '.'); ?></td>
                                     <td><?= $pmb['status']; ?></td>
                                 </tr>
-        
+
                             <?php endforeach; ?>
-        
+
                         </tbody>
                     </table>
                 </div>
