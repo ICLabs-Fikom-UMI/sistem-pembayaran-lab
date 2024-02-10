@@ -35,12 +35,35 @@ class Beranda extends Controller
         if ($_SESSION['role'] == 'Admin') {
             $data['title'] = 'Print Priode 1';
             $data['pembayaran'] = $this->model('Pembayaran_model')->tampil();
-            $data['countpembayaran'] = $this->model('Pembayaran_model')->countPembayaran();
-
-
+            foreach ($_POST['stambuk'] as $print) :
+                $data['print'][] = $this->model('Pembayaran_model')->printLaporan($print);
+                $data['matkul'][] = $this->model('Select_matkul_model')->printMatkul($print);
+            endforeach;
+            // var_dump($data['matkul']);
             $this->view('templates/header', $data);
             // $this->view('templates/sidebar');
             $this->view('Beranda/priode1', $data);
+            // $this->view('templates/footersidebar');
+            $this->view('templates/footer');
+        } else {
+            header("Location:" . BASEURL . "/Berandakp");
+            exit();
+        }
+    
+    }
+    public function printPriode2()
+    {
+        if ($_SESSION['role'] == 'Admin') {
+            $data['title'] = 'Print Priode 2';
+            $data['pembayaran'] = $this->model('Pembayaran_model')->tampil();
+            foreach ($_POST['stambuk'] as $print) :
+                $data['print'][] = $this->model('Pembayaran_model')->printLaporan($print);
+                $data['matkul'][] = $this->model('Select_matkul_model')->printMatkul($print);
+            endforeach;
+            // var_dump($data['matkul']);
+            $this->view('templates/header', $data);
+            // $this->view('templates/sidebar');
+            $this->view('Beranda/priode2', $data);
             // $this->view('templates/footersidebar');
             $this->view('templates/footer');
         } else {

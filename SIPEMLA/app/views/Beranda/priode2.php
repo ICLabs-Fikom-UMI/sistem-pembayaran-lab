@@ -27,16 +27,16 @@
                         <th>TANGGAL BAYAR</th>
                         <th>STAMBUK</th>
                         <th>NAMA MAHASISWA</th>
-                        <th>ALGO 1</th>
-                        <th>PTI</th>
-                        <th>STI</th>
-                        <th>SD</th>
-                        <th>BD 2</th>
+                        <th>ALGO 2</th>
+                        <th>ELDAS</th>
+                        <th>ASD</th>
+                        <th>BD 1</th>
+                        <th>PBO</th>
                         <th>WEB</th>
                         <th>JARKOM</th>
-                        <th>MICRO</th>
-                        <th>AA</th>
-                        <th>SO</th>
+                        <th>MOBILE</th>
+                        <th>MS</th>
+                        <th>SP</th>
                         <th>TOTAL</th>
                         <th>JUMLAH BAYAR</th>
                         <th>SISA BAYAR</th>
@@ -66,33 +66,33 @@
                         // Use str_pad to add leading zeros to $inv
                         $invWithLeadingZeros = str_pad($inv, 3, '0', STR_PAD_LEFT);
 
-                        $algo1 = '-';
-                        $pti = '-';
-                        $sti = '-';
-                        $sd = '-';
-                        $bd2 = '-';
+                        $algo2 = '-';
+                        $eldas = '-';
+                        $asd = '-';
+                        $bd1 = '-';
+                        $pbo = '-';
                         $web = '-';
                         $jarkom = '-';
-                        $micro = '-';
-                        $aa = '-';
-                        $so = '-';
+                        $mobile = '-';
+                        $ms = '-';
+                        $sp = '-';
 
                         foreach ($matkul as $matkul2) {
                             switch ($matkul2['kodematakuliah']) {
-                                case '001':
-                                    $algo1 = 'Rp. 55.000';
+                                case '002':
+                                    $algo2 = 'Rp. 55.000';
                                     break;
-                                case '004':
-                                    $pti = 'Rp. 55.000';
+                                case '006':
+                                    $eldas = 'Rp. 55.000';
                                     break;
-                                case '016':
-                                    $sti = 'Rp. 55.000';
+                                case '017':
+                                    $asd = 'Rp. 55.000';
                                     break;
-                                case '003':
-                                    $sd = 'Rp. 55.000';
+                                case '005':
+                                    $bd1= 'Rp. 55.000';
                                     break;
-                                case '007':
-                                    $bd2 = 'Rp. 55.000';
+                                case '008':
+                                    $pbo= 'Rp. 55.000';
                                     break;
                                 case '009':
                                     $web = 'Rp. 55.000';
@@ -100,14 +100,14 @@
                                 case '010':
                                     $jarkom = 'Rp. 55.000';
                                     break;
-                                case '015':
-                                    $micro = 'Rp. 55.000';
+                                case '011':
+                                    $mobile = 'Rp. 55.000';
                                     break;
-                                case '013':
-                                    $aa = 'Rp. 55.000';
+                                case '018':
+                                    $ms = 'Rp. 55.000';
                                     break;
-                                case '012':
-                                    $so = 'Rp. 55.000';
+                                case '019':
+                                    $sp = 'Rp. 55.000';
                                     break;
                             }
                         }
@@ -119,16 +119,16 @@
                             <td><?= $formattedDate ?></td>
                             <td><?= $cetak['stambuk'] ?></td>
                             <td><?= $cetak['nama'] ?></td>
-                            <td><?= $algo1 ?></td>
-                            <td><?= $pti ?></td>
-                            <td><?= $sti ?></td>
-                            <td><?= $sd ?></td>
-                            <td><?= $bd2 ?></td>
+                            <td><?= $algo2 ?></td>
+                            <td><?= $eldas ?></td>
+                            <td><?= $asd ?></td>
+                            <td><?= $bd1?></td>
+                            <td><?= $pbo?></td>
                             <td><?= $web ?></td>
                             <td><?= $jarkom ?></td>
-                            <td><?= $micro ?></td>
-                            <td><?= $aa ?></td>
-                            <td><?= $so ?></td>
+                            <td><?= $mobile ?></td>
+                            <td><?= $ms ?></td>
+                            <td><?= $sp ?></td>
                             <td><?= $cetak['nominal'] ?></td>
                             <td><?= $cetak['nominal'] ?></td>
                             <td>-</td>

@@ -18,7 +18,7 @@
             <li>
               <a href="<?= BASEURL ?>/Usermanagement" class="nav-link px-2 align-middle">
                 <i class="fs-4"><img style="width: 23px; height: auto" src="<?= BASEURL ?>/assets/img/user-icon.png" alt="logo-sipemla" /></i>
-                <span class="ms-1 d-none d-sm-inline">Usermanagement</span>
+                <span class="ms-1 d-none d-sm-inline">User Management</span>
               </a>
             </li>
             <li>

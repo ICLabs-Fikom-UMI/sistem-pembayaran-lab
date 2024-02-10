@@ -17,7 +17,7 @@
     <div class="overflow-y-auto p-4" style="max-height: 71vh;">
         <div class="row">
             <div class="col-lg-6 mb-2">
-                <?php Flasher::flash(); ?>
+                <?php General::flash(); ?>
             </div>
         </div>
         <div class="rounded-4 shadow-lg p-4" style="min-width: 750px;">

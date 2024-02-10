@@ -21,6 +21,7 @@ $(function () {
     );
 
     const id = $(this).data("id");
+    console.log(id);
 
     $.ajax({
       url: "http://localhost/SIPEMLA/Matakuliah/editTampil",

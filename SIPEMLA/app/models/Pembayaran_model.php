@@ -95,4 +95,13 @@ class Pembayaran_model
         $this->db->query("SELECT COUNT(idpembayaran) AS jumlahPembayaran FROM pembayaran");
         return $this->db->single();
     }
+
+    public function printLaporan($stambuk)
+    {
+        $this->db->query("SELECT pembayaran.stambuk, pembayaran.waktupembayaran, pembayaran.nominal, pembayaran.status, mahasiswa.nama FROM pembayaran JOIN mahasiswa ON pembayaran.stambuk = mahasiswa.stambuk WHERE pembayaran.stambuk = :stambuk ORDER BY pembayaran.idpembayaran DESC");
+
+        $this->db->bind('stambuk', $stambuk);
+
+        return $this->db->single();
+    }
 }

@@ -40,6 +40,13 @@ class Select_matkul_model
         $this->db->bind('stambuk', $id);
         return $this->db->resultSet();
     }
+    
+    public function printMatkul($id)
+    {
+        $this->db->query("SELECT matkul_select.kodematakuliah FROM matkul_select LEFT JOIN matakuliah ON matkul_select.kodematakuliah = matakuliah.kodematakuliah WHERE matkul_select.stambuk = :stambuk;");
+        $this->db->bind('stambuk', $id);
+        return $this->db->resultSet();
+    }
 
     public function tampil()
     {

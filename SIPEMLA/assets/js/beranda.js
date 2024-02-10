@@ -73,6 +73,22 @@ $(document).ready(function () {
   });
 });
 
-new DataTable("#tablePrint", {
-  scrollX: true,
+// new DataTable("#tablePrint", {
+//   scrollX: true,
+// });
+
+$(document).ready(function () {
+  var table = $("#tablePrint").DataTable({
+    lengthChange: false,
+    buttons: [
+      { extend: "copy", text: "Copy" },
+      { extend: "excel", text: "Excel" },
+      { extend: "csv", text: "CSV" },
+      { extend: "pdf", text: "PDF" },
+      { extend: "colvis", text: "Column Visibility" },
+    ],
+    scrollX: true,
+  });
+
+  table.buttons().container().appendTo("#tablePrint_wrapper .col-md-6:eq(0)");
 });

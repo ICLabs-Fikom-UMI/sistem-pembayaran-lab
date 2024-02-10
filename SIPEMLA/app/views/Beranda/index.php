@@ -116,7 +116,7 @@
                                 <td class="text-center"><?= $formattedDate; ?></td>
                                 <td class="text-center">Rp. <?= $pmb['nominal']; ?></td>
                                 <td class="text-center"><?= $pmb['status']; ?></td>
-                                <td class="text-center"><input class="form-check-input" type="checkbox" value="<?= $pmb['stambuk']; ?>" id="checkedOne" onkeydown="return event.key !== 'Enter';"></td>
+                                <td class="text-center"><input class="form-check-input" type="checkbox" value="<?= $pmb['stambuk']; ?>" id="checkedOne" onkeydown="return event.key !== 'Enter';" name="stambuk[]"></td>
                             </tr>
                         <?php endforeach; ?>
                         </form>
