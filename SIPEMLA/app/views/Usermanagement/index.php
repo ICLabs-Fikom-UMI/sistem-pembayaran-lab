@@ -29,7 +29,6 @@
                     <tr>
                         <th>No</th>
                         <th>Username</th>
-                        <th>Password</th>
                         <th>Role</th>
                         <th>Action</th>
                     </tr>
@@ -45,7 +44,6 @@
                         <tr>
                             <td><?= $no; ?></td>
                             <td><?= $user['username']; ?></td>
-                            <td><?= $user['password']; ?></td>
                             <td><?= $user['role']; ?></td>
                             <td>
                                 <a class="btn-edit edit-user" role="button" href="<?= BASEURL; ?>/Usermanagement/edit/<?= $user['iduser'] ?>" data-bs-toggle="modal" data-bs-target="#formUser" data-id="<?= $user['iduser']; ?>"><img src="<?= BASEURL ?>/assets/img/edit.png" alt="icon-edit"></a>
